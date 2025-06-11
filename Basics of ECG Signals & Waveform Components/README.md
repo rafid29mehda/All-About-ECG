@@ -1,5 +1,3 @@
-# Understanding ECG Signals and Waveform Components  
-
 ## **What is an ECG?**  
 An electrocardiogram (ECG) is a graph that records the heart’s electrical activity using electrodes placed on the skin[2][17]. Imagine your heart as a pump powered by tiny electrical signals. These signals cause the heart muscles to contract and relax, pumping blood throughout your body. The ECG captures these electrical changes as waves, helping doctors check if your heart is working properly[2][18].  
 
