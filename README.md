@@ -4,13 +4,17 @@
 - What is an Electrocardiogram (ECG)?
 - Historical development of ECG
 - Physiological basis (cardiac electrical activity)
-- Key ECG components (P wave, QRS complex, T wave)
+- Key ECG components (P wave, QRS complex, T wave, all intervals, segments)
 - Normal ECG patterns
 - Abnormal ECG patterns
 - Types of ECG (resting, stress, Holter monitoring)
 - ECG lead systems (12-lead, 3-lead, single-lead)
 - Sampling rates and digital recording
 - Importance in medical diagnostics
+- ECG Lead Systems (Standard, Precordial, Augmented)
+- Types of ECG Monitoring (Resting, Ambulatory, Exercise)
+- Typical ECG Data Formats
+- Ethical and Privacy Concerns in ECG Data Handling
 
 ## 2. Fundamentals of Signal Processing
 - Definition of signals
