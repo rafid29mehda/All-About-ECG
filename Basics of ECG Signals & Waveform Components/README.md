@@ -1,184 +1,286 @@
-## **What is an ECG?**  
-An electrocardiogram (ECG) is a graph that records the heart’s electrical activity using electrodes placed on the skin[2][17]. Imagine your heart as a pump powered by tiny electrical signals. These signals cause the heart muscles to contract and relax, pumping blood throughout your body. The ECG captures these electrical changes as waves, helping doctors check if your heart is working properly[2][18].  
+# Introduction to ECG Signals and Components for Beginners
+
+## 1. Basics of ECG Signals
+
+### What is an ECG?
+An **ECG** (Electrocardiogram) is like a special camera that takes pictures of your heart’s electrical activity. Your heart is a muscle that pumps blood, and it does this by creating tiny electrical signals to make itself beat. These signals travel through your body, and we can measure them by placing small sticky pads (called **electrodes**) on your skin, usually on your chest, arms, and legs. The ECG machine records these signals and draws them as a wavy line on a graph, which doctors use to check if your heart is working properly.
+
+Imagine your heart as a band playing music. The ECG is like a microphone that records the rhythm and sounds of the band (your heart) to see if everyone is playing in harmony. If something’s off, the ECG will show it in the wavy line.
+
+### How Does an ECG Work?
+The heart’s electrical signals start in a special area called the **sinoatrial (SA) node**, which is like the conductor of the band. This node sends out an electrical “spark” that tells the heart muscles to contract and pump blood. The ECG machine picks up these sparks and turns them into a graph with ups and downs (waves) that represent different parts of the heartbeat.
+
+### Why is ECG Important?
+Doctors use ECGs to:
+- Check if your heart is beating too fast, too slow, or irregularly (like an arrhythmia).
+- Spot signs of a heart attack or other heart problems.
+- Monitor how your heart responds to medicines or treatments.
+- Make sure your heart is healthy before surgery or other procedures.
+
+### What Does an ECG Look Like?
+An ECG graph has a series of **waves** (like hills and valleys) that repeat with every heartbeat. These waves are named **P, Q, R, S, T, and sometimes U**. Each wave or segment tells us something about what’s happening in the heart at that moment. The graph is drawn on special paper (or a screen) with small squares, where:
+- The **horizontal axis** represents time (how long each part of the heartbeat takes).
+- The **vertical axis** represents voltage (how strong the electrical signal is).
+
+For example, one small square on the ECG paper is usually 0.04 seconds (40 milliseconds) wide and 0.1 millivolts (mV) tall. This helps doctors measure the timing and strength of each wave.
 
 ---
 
-## **The ECG Waveform: Breaking It Down**  
-A typical ECG waveform has five main components: **P wave, QRS complex, T wave, U wave**, and specific intervals (**PR, QT, ST**). Let’s explore each part step-by-step.  
+## 2. ECG Waveform Components
+
+Let’s break down the parts of an ECG waveform, which are like the “notes” in the heart’s music. Each part has a specific job and tells us something about the heart.
+
+### 2.1 P Wave: Characteristics and Significance
+**What is it?**
+The **P wave** is the first small bump on the ECG graph. It happens when the **atria** (the two upper chambers of the heart) get an electrical signal and contract to push blood into the ventricles (the lower chambers).
+
+**Characteristics:**
+- **Shape**: A small, rounded hill, usually upward (positive).
+- **Duration**: Takes about 0.08 to 0.12 seconds (80–120 milliseconds).
+- **Amplitude**: Usually less than 0.25 mV (2.5 small squares tall).
+- **Location**: Comes before the big QRS complex.
+
+**Significance:**
+- The P wave shows that the atria are working properly.
+- If the P wave is too tall or wide, it might mean the atria are enlarged (e.g., in conditions like **atrial hypertrophy**).
+- If there’s no P wave or it’s irregular, it could indicate an arrhythmia like **atrial fibrillation**, where the atria quiver instead of pumping properly.
+
+**Example**: Imagine you’re squeezing a water balloon (the atria) to push water into a bucket (the ventricles). The P wave is the moment you squeeze the balloon.
+
+### 2.2 QRS Complex: Morphology and Duration
+**What is it?**
+The **QRS complex** is the biggest and most noticeable part of the ECG. It looks like a sharp spike with three parts: a small dip (Q), a tall peak (R), and another dip (S). It represents the **ventricles** (the heart’s main pumping chambers) contracting to push blood out to the body and lungs.
+
+**Morphology (Shape):**
+- **Q wave**: A small downward dip before the big peak (not always visible).
+- **R wave**: A tall upward spike, the most prominent part.
+- **S wave**: A downward dip after the R wave.
+- The shape can vary depending on which part of the heart the electrodes are “looking at” (different leads).
+
+**Duration:**
+- Normally takes 0.06 to 0.10 seconds (60–100 milliseconds).
+- If it’s too wide (>0.12 seconds), it might suggest a problem like a **bundle branch block**, where the electrical signal takes longer to travel through the ventricles.
+
+**Significance:**
+- The QRS complex shows how well the ventricles are working.
+- Abnormal shapes or durations can indicate issues like a **heart attack** (e.g., large Q waves) or electrical conduction problems.
+
+**Example**: Think of the QRS complex as a big “BOOM” when the ventricles pump blood, like a cannon firing. The Q and S are like small echoes before and after the main blast (R).
+
+### 2.3 T Wave: Properties and Variations
+**What is it?**
+The **T wave** is a rounded wave that comes after the QRS complex. It represents the **ventricles relaxing** (repolarizing) to get ready for the next heartbeat.
+
+**Properties:**
+- **Shape**: Usually upward and rounded, but can be flat or inverted in some leads.
+- **Amplitude**: Typically 0.1 to 0.5 mV (1–5 small squares tall).
+- **Duration**: About 0.10 to 0.25 seconds (100–250 milliseconds).
+
+**Variations:**
+- **Inverted T waves** (going downward) can indicate problems like **ischemia** (not enough blood flow to the heart) or electrolyte imbalances.
+- **Tall T waves** might suggest high potassium levels (**hyperkalemia**).
+- The shape and size vary depending on the lead and patient.
+
+**Significance:**
+- The T wave tells us how the ventricles are recovering after each beat.
+- Abnormal T waves can be a sign of heart stress or damage.
+
+**Example**: Imagine the T wave as the heart taking a deep breath to relax after the big effort of pumping blood (QRS).
+
+### 2.4 U Wave: Identification and Clinical Relevance
+**What is it?**
+The **U wave** is a small, subtle wave that sometimes appears after the T wave. It’s not always visible and is much smaller than the other waves.
+
+**Identification:**
+- **Shape**: A tiny, rounded bump, usually upward.
+- **Amplitude**: Very small, less than 0.1 mV.
+- **Location**: Follows the T wave, often hard to see without zooming in.
+
+**Clinical Relevance:**
+- The U wave is thought to represent the final relaxation of the ventricles or Purkinje fibers (special heart cells that conduct electrical signals).
+- **Prominent U waves** can indicate low potassium levels (**hypokalemia**) or certain medications.
+- They’re not always present, so their absence is usually normal.
+
+**Example**: Think of the U wave as a little “afterthought” wiggle, like the heart saying, “Okay, I’m fully relaxed now!”
+
+### 2.5 PR Interval: Measurement and Normal Ranges
+**What is it?**
+The **PR interval** is the time from the start of the P wave to the start of the QRS complex. It measures how long it takes for the electrical signal to travel from the atria to the ventricles.
+
+**Measurement:**
+- Start at the beginning of the P wave and end at the start of the Q or R wave (whichever comes first).
+- Measured in seconds or milliseconds on the ECG graph.
+
+**Normal Ranges:**
+- Adults: 0.12 to 0.20 seconds (120–200 milliseconds, or 3–5 small squares).
+- Shorter or longer intervals can indicate problems:
+  - **Short PR interval** (<0.12 seconds): May suggest conditions like **Wolff-Parkinson-White syndrome**, where there’s an extra electrical pathway.
+  - **Long PR interval** (>0.20 seconds): Could indicate a **first-degree heart block**, where the signal is delayed.
+
+**Significance:**
+- The PR interval shows how well the electrical signal is traveling through the heart’s “wiring” (like the atrioventricular node).
+- Abnormalities can help diagnose conduction issues.
+
+**Example**: Imagine the PR interval as the time it takes for a message to travel from the band conductor (atria) to the drummers (ventricles) to start playing.
+
+### 2.6 QT Interval and Corrected QT (QTc) Calculations
+**What is it?**
+The **QT interval** is the time from the start of the QRS complex to the end of the T wave. It represents the total time the ventricles are active (contracting and relaxing).
+
+**Measurement:**
+- Start at the beginning of the Q wave (or R if no Q) and end at the end of the T wave.
+- Measured in seconds or milliseconds.
+
+**Normal Ranges:**
+- Varies with heart rate (faster heart rate = shorter QT).
+- Typical range: 0.35 to 0.44 seconds (350–440 milliseconds).
+
+**Corrected QT (QTc):**
+- The QT interval changes with heart rate, so we “correct” it to a standard heart rate (60 beats per minute) using a formula called **Bazett’s formula**:
+  \[
+  QTc = \frac{QT}{\sqrt{RR}}
+  \]
+  where:
+  - **QT** is the measured QT interval in seconds.
+  - **RR** is the time between two R waves (in seconds).
+- Normal QTc: 0.36–0.44 seconds for men, 0.36–0.46 seconds for women.
+
+**Significance:**
+- A **long QT interval** (>0.44 seconds) can increase the risk of dangerous arrhythmias like **Torsades de Pointes**.
+- A **short QT interval** (<0.35 seconds) is rare but can also cause arrhythmias.
+
+**Example**: Think of the QT interval as the time the ventricles are “on stage” performing (contracting and relaxing). If they stay too long or leave too early, it could cause trouble.
+
+### 2.7 ST Segment: Analysis and Baseline Reference
+**What is it?**
+The **ST segment** is the flat part of the ECG between the end of the S wave and the start of the T wave. It represents the time when the ventricles are in a “neutral” state, between contracting and relaxing.
+
+**Analysis:**
+- The ST segment should be **isoelectric** (at the same level as the baseline, explained below).
+- **ST elevation**: When the ST segment is raised above the baseline, it can indicate a **heart attack** (myocardial infarction) due to blocked blood flow.
+- **ST depression**: When the ST segment is below the baseline, it can suggest **ischemia** (reduced blood flow) or other heart stress.
+
+**Baseline Reference:**
+- The baseline is the flat “zero” line on the ECG where no electrical activity is happening (usually between the T wave and the next P wave).
+- The ST segment is compared to this baseline to check if it’s elevated or depressed.
+
+**Significance:**
+- Changes in the ST segment are critical for diagnosing heart attacks and other conditions.
+- Measured in millimeters (e.g., 1 mm elevation = 0.1 mV).
+
+**Example**: Imagine the ST segment as a tightrope walker staying level. If they go up or down, it’s a sign something’s wrong with the heart’s balance.
+
+### 2.8 J Point: Identification and Significance
+**What is it?**
+The **J point** is the spot where the QRS complex ends and the ST segment begins (right after the S wave). It’s like a “junction” between the ventricles contracting and starting to relax.
+
+**Identification:**
+- Look for the point where the sharp S wave flattens out into the ST segment.
+- It’s usually at the baseline level but can be elevated or depressed.
+
+**Significance:**
+- **J point elevation**: Common in healthy people (especially young men) but can also indicate issues like **early repolarization** or a heart attack.
+- Abnormal J points help doctors pinpoint specific heart conditions.
+
+**Example**: Think of the J point as the moment a roller coaster finishes its big drop (QRS) and starts to level out (ST segment).
+
+### 2.9 Isoelectric Line Concepts
+**What is it?**
+The **isoelectric line** is the flat, “zero” line on the ECG where no electrical activity is detected. It’s the reference point for measuring the height (amplitude) of waves and segments.
+
+**Concepts:**
+- Usually seen between the T wave of one heartbeat and the P wave of the next.
+- Acts as the “ground level” for the ECG graph.
+- If the baseline wanders (moves up and down), it can make the ECG hard to read (often caused by breathing or movement).
+
+**Significance:**
+- The isoelectric line helps doctors measure whether waves (like ST segments) are too high or too low.
+- A stable baseline is crucial for accurate ECG interpretation.
+
+**Example**: Imagine the isoelectric line as the calm surface of a lake. The waves (P, QRS, T) are like ripples or waves on the water, and we measure their height from the lake’s surface.
+
+### 2.10 Wave Amplitude Measurements and Normal Ranges
+**What is it?**
+The **amplitude** of an ECG wave is how tall or deep it is, measured in millivolts (mV) or millimeters (mm) on the ECG graph. It shows the strength of the electrical signal.
+
+**Measurements:**
+- **P wave**: <0.25 mV (2.5 mm).
+- **R wave**: Varies by lead, typically 0.5–2.0 mV in chest leads.
+- **T wave**: 0.1–0.5 mV.
+- **Q and S waves**: Usually small, <0.3 mV.
+- Measured relative to the isoelectric line.
+
+**Normal Ranges:**
+- Amplitudes vary depending on the lead (different angles of the heart).
+- Too tall or too small waves can indicate problems like hypertrophy (enlarged heart muscle) or low voltage (e.g., fluid around the heart).
+
+**Significance:**
+- Amplitude helps assess the heart’s electrical strength and size.
+- Abnormal amplitudes can point to specific conditions.
+
+**Example**: Think of amplitude as how loud each instrument in the heart’s band plays. If the drums (R wave) are too quiet or too loud, it might mean something’s off.
 
 ---
 
-### **1. P Wave: The Atrial Contraction Signal**  
-The **P wave** is the first small upward bump on the ECG. It represents the electrical activation of the *atria* (the heart’s upper chambers)[1][15].  
+## 3. End-to-End Example: Analyzing a Sample ECG
 
-#### **Characteristics & Significance**  
-- **Shape**: Smooth and rounded, like a hill[1][15].  
-- **Duration**: ≤ 0.12 seconds (3 small squares on ECG paper)[1][9].  
-- **Amplitude**: ≤ 2.5 mm tall in limb leads (e.g., leads I, II)[1][15].  
-- **Direction**: Positive (upward) in leads I, II, and V4–V6[15].  
+Let’s put all this together with a simple example. Imagine you’re a doctor looking at an ECG strip from a patient named Alex, a 30-year-old with no known heart issues. You’re using a standard 12-lead ECG, and the paper speed is 25 mm/second (1 small square = 0.04 seconds, 1 mm = 0.1 mV).
 
-**Example**: If the P wave is **notched** (split into two peaks), it might indicate atrial enlargement[1]. A **missing P wave** could mean the electrical signal isn’t starting in the sinoatrial node (e.g., atrial fibrillation)[17].  
+### Step 1: Observe the ECG
+You see a repeating pattern of waves: a small P wave, a sharp QRS complex, a T wave, and no visible U wave. The baseline is steady (isoelectric line).
 
----
+### Step 2: Measure the P Wave
+- **Shape**: Rounded, upward.
+- **Duration**: You count 3 small squares (3 × 0.04 = 0.12 seconds).
+- **Amplitude**: About 2 mm tall (0.2 mV).
+- **Interpretation**: Normal P wave, suggesting the atria are contracting properly.
 
-### **2. QRS Complex: The Ventricular Contraction Signal**  
-The **QRS complex** is the tall spike following the P wave. It reflects the *ventricles* (lower chambers) contracting to pump blood[6][18].  
+### Step 3: Measure the QRS Complex
+- **Shape**: Small Q (down), tall R (up), small S (down).
+- **Duration**: 2 small squares (2 × 0.04 = 0.08 seconds).
+- **Amplitude**: R wave is 10 mm (1.0 mV).
+- **Interpretation**: Normal QRS, indicating healthy ventricular contraction.
 
-#### **Morphology & Duration**  
-- **Components**:  
-  - **Q wave**: First downward deflection (if present).  
-  - **R wave**: First upward deflection.  
-  - **S wave**: Downward deflection after the R wave[6].  
-- **Duration**: 0.08–0.10 seconds (2–2.5 small squares)[6]. A wider QRS (>0.12s) suggests delayed ventricular activation (e.g., bundle branch block)[6].  
+### Step 4: Check the T Wave
+- **Shape**: Upward, rounded.
+- **Amplitude**: 3 mm (0.3 mV).
+- **Interpretation**: Normal T wave, showing proper ventricular relaxation.
 
-**Example**: In a healthy heart, the QRS in lead II is tall and narrow. If it’s **wide and notched**, it could indicate a blockage in the heart’s electrical pathways[6].  
+### Step 5: Look for U Wave
+- No U wave is visible.
+- **Interpretation**: This is normal, as U waves are often absent or faint.
 
----
+### Step 6: Measure the PR Interval
+- From the start of the P wave to the start of the QRS: 4 small squares (4 × 0.04 = 0.16 seconds).
+- **Interpretation**: Normal PR interval, showing good conduction from atria to ventricles.
 
-### **3. T Wave: The Ventricular Reset Signal**  
-The **T wave** is a smaller upward wave after the QRS. It represents the ventricles *resetting* (repolarizing) for the next heartbeat[1][7].  
+### Step 7: Measure the QT Interval
+- From the start of the QRS to the end of the T wave: 10 small squares (10 × 0.04 = 0.40 seconds).
+- **RR interval**: Time between two R waves is 25 small squares (25 × 0.04 = 1.0 second, heart rate = 60 beats per minute).
+- **QTc calculation**: Using Bazett’s formula, \( QTc = \frac{0.40}{\sqrt{1.0}} = 0.40 \) seconds.
+- **Interpretation**: Normal QTc, suggesting no risk of arrhythmias.
 
-#### **Properties & Variations**  
-- **Shape**: Asymmetrical—gentle upslope, steeper downslope[7][15].  
-- **Amplitude**: ≤ 5 mm in limb leads, ≤ 10 mm in chest leads[15].  
-- **Direction**: Upright in most leads (except aVR and V1)[7].  
+### Step 8: Analyze the ST Segment
+- The ST segment is flat and level with the isoelectric line.
+- **Interpretation**: No ST elevation or depression, indicating no signs of heart attack or ischemia.
 
-**Abnormalities**:  
-- **Peaked T waves**: May signal high potassium levels[7].  
-- **Inverted T waves**: Can indicate heart muscle damage (e.g., heart attack)[7].  
+### Step 9: Check the J Point
+- The J point is at the baseline, right after the S wave.
+- **Interpretation**: Normal J point, no signs of abnormal repolarization.
 
----
-
-### **4. U Wave: The Mystery Wave**  
-The **U wave** is a rare, small bump after the T wave. Its origin is debated but may reflect repolarization of the heart’s Purkinje fibers[8].  
-
-#### **Clinical Relevance**  
-- **Prominent U waves**: Linked to low potassium, slow heart rates, or certain medications[8].  
-- **Inverted U waves**: May suggest heart disease[8].  
-
-**Example**: A tall U wave in a patient with fatigue could indicate hypokalemia (low potassium)[8].  
-
----
-
-### **5. PR Interval: The Atrial-to-Ventricular Delay**  
-The **PR interval** measures the time from the start of the P wave to the start of the QRS[9][15]. It reflects how long the electrical signal takes to travel from the atria to the ventricles.  
-
-#### **Normal Range & Measurement**  
-- **Duration**: 0.12–0.20 seconds (3–5 small squares)[9][15].  
-- **Prolonged PR (>0.20s)**: “First-degree heart block”—delayed signal through the AV node[9].  
-- **Short PR (<0.12s)**: May indicate an abnormal electrical pathway (e.g., Wolff-Parkinson-White syndrome)[9].  
-
-**Example**: A PR interval of 0.22s suggests delayed conduction, often seen in older adults[9].  
+### Step 10: Summarize
+Alex’s ECG looks normal:
+- Regular P waves, QRS complexes, and T waves.
+- Normal PR interval (0.16 seconds), QTc (0.40 seconds), and ST segment.
+- No U wave or J point abnormalities.
+- **Conclusion**: Alex’s heart seems healthy, but you’d confirm with a doctor and compare with other leads.
 
 ---
 
-### **6. QT Interval: The Ventricular Activity Timer**  
-The **QT interval** measures the total time for ventricular depolarization *and* repolarization (from QRS start to T wave end)[10][11].  
+## 4. Tips for Learning and Remembering
+- **Visualize**: Think of the ECG as a story of the heart’s beat, with each wave as a chapter (P = atria, QRS = ventricles, T = relaxation).
+- **Practice**: Look at sample ECGs (try PhysioNet’s MIT-BIH database for free examples).
+- **Draw**: Sketch an ECG and label the P, QRS, T, PR, QT, etc., to reinforce the concepts.
+- **Analogies**: Use the band or roller coaster analogies to make it fun!
+- **Tools**: Use apps like ECG Guide or websites like Life in the Fast Lane for interactive learning.
 
-#### **Corrected QT (QTc)**  
-Since QT varies with heart rate, we calculate **QTc** to standardize it:  
-$$
-\text{QTc} = \frac{\text{QT}}{\sqrt{\text{RR interval}}}
-$$  
-- **Normal QTc**: ≤ 0.44 seconds[11].  
-- **Prolonged QTc**: Increases risk of dangerous arrhythmias (e.g., torsades de pointes)[10].  
-
-**Example**: A patient with a QT of 0.48s and heart rate of 60 bpm (RR=1s) has QTc = 0.48s, indicating prolonged QT[11].  
-
----
-
-### **7. ST Segment: The Ischemia Indicator**  
-The **ST segment** is the flat line between the QRS and T wave. It reflects the ventricles’ early repolarization phase[12][15].  
-
-#### **Analysis & Baseline Reference**  
-- **Isoelectric baseline**: The ST segment should align with the TP segment (between T and P waves)[15].  
-- **Elevation/depression**: ≥1 mm deviation from baseline suggests heart damage (e.g., heart attack)[12].  
-
-**Example**: **ST elevation** in leads V2–V4 often indicates a blockage in the left anterior descending artery (a “widowmaker” heart attack)[12].  
-
----
-
-### **8. J Point: The QRS End Marker**  
-The **J point** is where the QRS complex meets the ST segment[13][15]. It marks the end of ventricular depolarization.  
-
-#### **Significance**  
-- **Elevated J point**: Seen in early repolarization (normal variant) or heart injury[13].  
-- **Depressed J point**: May indicate ischemia[13].  
-
-**Example**: A healthy athlete might have slight J-point elevation due to benign early repolarization[13].  
-
----
-
-### **9. Isoelectric Line: The Silent Baseline**  
-The **isoelectric line** is the flat baseline between waves, indicating no electrical activity[15][16]. It’s used as a reference to measure deviations in other waves.  
-
-**Example**: If the ST segment is *above* the isoelectric line, it’s elevated—a sign of heart damage[15].  
-
----
-
-### **10. Wave Amplitudes: Measuring Electrical Strength**  
-- **P wave**: ≤2.5 mm in limb leads[15].  
-- **QRS**: ≤25 mm in chest leads[15].  
-- **T wave**: ≤5 mm in limb leads[15].  
-
-**Example**: A **giant R wave** in V1–V3 may indicate right ventricular hypertrophy[6].  
-
----
-
-## **Putting It All Together**  
-Imagine an ECG from a healthy person:  
-1. **P wave**: Small hill (0.10s) in lead II.  
-2. **QRS**: Sharp spike (0.08s) with tall R waves.  
-3. **T wave**: Rounded peak matching the QRS direction.  
-4. **PR interval**: 0.16s.  
-5. **QTc**: 0.40s.  
-
-Abnormalities like a **missing P wave** (atrial fibrillation) or **ST elevation** (heart attack) stand out against this normal pattern.  
-
-## References
-[1] https://litfl.com/ecg-library/basics/
-[2] https://www.jove.com/v/10473/acquisition-and-analysis-of-an-ecg-electrocardiography-signal
-[3] https://healthway.com.bd/products/disposable-ecg-electrodes-heartrode-hr-op42
-[4] https://www.ausmed.com/learn/articles/5-lead-ecg
-[5] https://litfl.com/p-wave-ecg-library/
-[6] https://en.wikipedia.org/wiki/QRS_complex
-[7] https://litfl.com/t-wave-ecg-library/
-[8] https://en.wikipedia.org/wiki/U_wave
-[9] https://litfl.com/pr-interval-ecg-library/
-[10] https://en.wikipedia.org/wiki/QT_interval
-[11] https://medschool.co/tests/ecg-basics/the-qt-interval
-[12] https://litfl.com/st-segment-ecg-library/
-[13] https://litfl.com/j-point-ecg-library/
-[14] https://elentra.healthsci.queensu.ca/assets/modules/ts-ecg/normal_ecg.html
-[15] https://www.skillstat.com/glossary/isoelectric-line/
-[16] https://ghscme.ethosce.com/sites/default/files/Basic%20ECG%20Interpretation%20-%20Leonard.pdf
-[17] https://en.wikipedia.org/wiki/Electrocardiography
-[18] https://www.aclsmedicaltraining.com/basics-of-ecg/
-[19] https://mindthebleep.com/ecg-basics/
-[20] https://www.youtube.com/watch?v=4mYB_ooOgMY
-[21] https://geekymedics.com/how-to-read-an-ecg/
-[22] https://www.ncbi.nlm.nih.gov/books/NBK551635/
-[23] https://ecgwaves.com/topic/ecg-normal-p-wave-qrs-complex-st-segment-t-wave-j-point/
-[24] https://litfl.com/u-wave-ecg-library/
-[25] https://www.sciencedirect.com/topics/medicine-and-dentistry/u-wave
-[26] https://www.sciencedirect.com/topics/medicine-and-dentistry/st-segment
-[27] https://www.ncbi.nlm.nih.gov/books/NBK459364/
-[28] https://pmc.ncbi.nlm.nih.gov/articles/PMC1614214/
-[29] https://en.wikipedia.org/wiki/P_wave_(electrocardiography)
-[30] https://pmc.ncbi.nlm.nih.gov/articles/PMC1122394/
-[31] https://www.ahajournals.org/doi/10.1161/CIRCEP.121.010435
-[32] https://pmc.ncbi.nlm.nih.gov/articles/PMC7900243/
-[33] https://medschool.co/tests/ecg-basics/the-t-wave
-[34] https://ecg.utah.edu/lesson/12
-[35] https://www.slideshare.net/slideshow/u-wave-in-ecg-and-its-abnormalities-in-ecg/267221267
-[36] https://resus.com.au/the-u-wave-and-the-ecg-dont-miss-this/
-[37] https://en.wikipedia.org/wiki/PR_interval
-[38] https://en.wikipedia.org/wiki/ST_segment
-[39] https://app.pulsenotes.com/clinical/ecgs/notes/8-st-segment-t-waves
-[40] https://www.medicalnewstoday.com/articles/st-depression-on-ecg
-[41] https://www.slideshare.net/slideshow/j-point-in-ecg-and-its-inerpretation-in-ecg/267221385
-[42] https://empendium.com/mcmtextbook/chapter/B31.1269.3.6.1.
-[43] http://www.imperialendo.co.uk/Newskills/ecg/ECG1.html
-[44] https://patient9.com/medical-device-glossary/baseline-electrocardiogram-ecg/
-[45] https://www.gehealthcare.com/insights/article/the-value-of-a-baseline-resting-ecg-for-comparison-purposes
-[46] https://ecg.utah.edu/lesson/3
