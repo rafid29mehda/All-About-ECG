@@ -3,19 +3,19 @@
 ## 1. Basics of ECG Signals
 
 ### What is an ECG?
-An **ECG** (Electrocardiogram) is like a special camera that takes pictures of your heart’s electrical activity. Your heart is a muscle that pumps blood, and it does this by creating tiny electrical signals to make itself beat. These signals travel through your body, and we can measure them by placing small sticky pads (called **electrodes**) on your skin, usually on your chest, arms, and legs. The ECG machine records these signals and draws them as a wavy line on a graph, which doctors use to check if your heart is working properly.
+An **ECG** (Electrocardiogram) is like a special camera that takes pictures of our heart’s electrical activity. our heart is a muscle that pumps blood, and it does this by creating tiny electrical signals to make itself beat. These signals travel through our body, and we can measure them by placing small sticky pads (called **electrodes**) on our skin, usually on our chest, arms, and legs. The ECG machine records these signals and draws them as a wavy line on a graph, which doctors use to check if our heart is working properly.
 
-Imagine your heart as a band playing music. The ECG is like a microphone that records the rhythm and sounds of the band (your heart) to see if everyone is playing in harmony. If something’s off, the ECG will show it in the wavy line.
+Imagine our heart as a band playing music. The ECG is like a microphone that records the rhythm and sounds of the band (our heart) to see if everyone is playing in harmony. If something’s off, the ECG will show it in the wavy line.
 
 ### How Does an ECG Work?
 The heart’s electrical signals start in a special area called the **sinoatrial (SA) node**, which is like the conductor of the band. This node sends out an electrical “spark” that tells the heart muscles to contract and pump blood. The ECG machine picks up these sparks and turns them into a graph with ups and downs (waves) that represent different parts of the heartbeat.
 
 ### Why is ECG Important?
 Doctors use ECGs to:
-- Check if your heart is beating too fast, too slow, or irregularly (like an arrhythmia).
+- Check if our heart is beating too fast, too slow, or irregularly (like an arrhythmia).
 - Spot signs of a heart attack or other heart problems.
-- Monitor how your heart responds to medicines or treatments.
-- Make sure your heart is healthy before surgery or other procedures.
+- Monitor how our heart responds to medicines or treatments.
+- Make sure our heart is healthy before surgery or other procedures.
 
 ### What Does an ECG Look Like?
 An ECG graph has a series of **waves** (like hills and valleys) that repeat with every heartbeat. These waves are named **P, Q, R, S, T, and sometimes U**. Each wave or segment tells us something about what’s happening in the heart at that moment. The graph is drawn on special paper (or a screen) with small squares, where:
@@ -45,7 +45,7 @@ The **P wave** is the first small bump on the ECG graph. It happens when the **a
 - If the P wave is too tall or wide, it might mean the atria are enlarged (e.g., in conditions like **atrial hypertrophy**).
 - If there’s no P wave or it’s irregular, it could indicate an arrhythmia like **atrial fibrillation**, where the atria quiver instead of pumping properly.
 
-**Example**: Imagine you’re squeezing a water balloon (the atria) to push water into a bucket (the ventricles). The P wave is the moment you squeeze the balloon.
+**Example**: Imagine you’re squeezing a water balloon (the atria) to push water into a bucket (the ventricles). The P wave is the moment wesqueeze the balloon.
 
 ### 2.2 QRS Complex: Morphology and Duration
 **What is it?**
@@ -227,11 +227,11 @@ The **amplitude** of an ECG wave is how tall or deep it is, measured in millivol
 Let’s put all this together with a simple example. Imagine you’re a doctor looking at an ECG strip from a patient named Alex, a 30-year-old with no known heart issues. You’re using a standard 12-lead ECG, and the paper speed is 25 mm/second (1 small square = 0.04 seconds, 1 mm = 0.1 mV).
 
 ### Step 1: Observe the ECG
-You see a repeating pattern of waves: a small P wave, a sharp QRS complex, a T wave, and no visible U wave. The baseline is steady (isoelectric line).
+wesee a repeating pattern of waves: a small P wave, a sharp QRS complex, a T wave, and no visible U wave. The baseline is steady (isoelectric line).
 
 ### Step 2: Measure the P Wave
 - **Shape**: Rounded, upward.
-- **Duration**: You count 3 small squares (3 × 0.04 = 0.12 seconds).
+- **Duration**: wecount 3 small squares (3 × 0.04 = 0.12 seconds).
 - **Amplitude**: About 2 mm tall (0.2 mV).
 - **Interpretation**: Normal P wave, suggesting the atria are contracting properly.
 
