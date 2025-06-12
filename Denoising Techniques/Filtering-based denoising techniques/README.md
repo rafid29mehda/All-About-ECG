@@ -311,6 +311,303 @@ plt.show()
 
 **Try It ourself**: Run in Colab, change `lowcut` to 1.0 Hz or `order` to 6, and see how it affects the signal. A higher order makes the filter sharper but slower.
 
+
+
+### 1. Savitzky-Golay Filtering
+
+**What is it?**
+Think of an ECG signal as a bumpy road with heartbeats as hills and noise as small pebbles. Savitzky-Golay filtering is like a smart road-paver that smooths the pebbles while keeping the hills’ shapes perfect. It fits a small polynomial (like a curve) to a window of signal points, smoothing the data without blurring important features like QRS peaks.
+
+**How does it work?**
+- **Step 1**: Choose a window size (e.g., 7 points) and polynomial order (e.g., 2 for a quadratic curve).
+- **Step 2**: Slide the window over the ECG signal.
+- **Step 3**: For each window, fit a polynomial to the points and use the fitted value at the center point.
+- **Step 4**: Output the smoothed ECG signal.
+
+**Why is it useful for ECG?**
+Savitzky-Golay is great for ECGs because it smooths noise (like muscle artifacts) while preserving sharp features like QRS complexes, which are critical for clinical and ML/DL analysis.
+
+**When to Use in ML/DL?**
+- **Use Case**: Ideal for preprocessing ECGs before ML models (e.g., Random Forest, SVM) or DL models (e.g., CNNs) for tasks like QRS detection or arrhythmia classification.
+- **Why Choose It?** Preserves sharp ECG features, improving feature extraction and model accuracy.
+- **ECG Signal Characteristics**:
+  - **Sharp Features**: Use when preserving QRS complexes is critical.
+  - **Moderate Noise**: Choose for ECGs with muscle noise or small artifacts.
+  - **Short Recordings**: Effective for short ECGs from wearables.
+  - **Smooth Transitions**: Select when you need smooth P and T waves without distortion.
+  - **Real-Time Processing**: Good for fast, lightweight applications.
+
+**Key Points for Beginners:**
+1. Fits polynomials to smooth data.
+2. Preserves sharp QRS peaks.
+3. Window size and polynomial order are key parameters.
+4. Python’s `scipy.signal` supports it.
+5. Fast and computationally efficient.
+6. Less effective for baseline wander.
+7. Great for time-domain ECG analysis.
+8. Used in wearable ECG devices.
+9. Avoid large windows to prevent over-smoothing.
+10. Simple to implement.
+
+**Example Use Case:** An ECG with small muscle noise from a smartwatch is smoothed with Savitzky-Golay for an ML model to detect heartbeats accurately.
+
+---
+
+### 2. Moving Average Filter
+
+**What is it?**
+A moving average filter is like sliding a magic eraser over your ECG drawing, averaging nearby points to smooth out small scribbles. It takes a window of signal points, calculates their average, and uses that to replace the center point, making the signal less bumpy.
+
+**How does it work?**
+- **Step 1**: Choose a window size (e.g., 5 points).
+- **Step 2**: Slide the window over the ECG signal.
+- **Step 3**: For each window, compute the average of the points.
+- **Step 4**: Output the smoothed ECG signal.
+
+**Why is it useful for ECG?**
+It’s super simple and reduces high-frequency noise like muscle artifacts, but it can blur sharp features like QRS peaks if the window is too big.
+
+**When to Use in ML/DL?**
+- **Use Case**: Suitable for preprocessing ECGs for ML/DL tasks where simplicity is key, like preliminary noise reduction before more advanced filtering.
+- **Why Choose It?** Easy to implement and fast, providing a quick way to reduce noise for initial model testing.
+- **ECG Signal Characteristics**:
+  - **High-Frequency Noise**: Use for muscle artifacts or small wiggles.
+  - **Non-Critical Features**: Choose when slight blurring of QRS is acceptable.
+  - **Short Signals**: Effective for short ECGs from wearables.
+  - **Low Computational Resources**: Select for devices with limited processing power.
+  - **Initial Processing**: Good for quick denoising before other methods.
+
+**Key Points for Beginners:**
+1. Averages points in a window to smooth.
+2. Simple and fast.
+3. Can blur QRS peaks if window is too large.
+4. Python’s `numpy` supports it.
+5. Less effective for baseline wander.
+6. Used in basic ECG processing.
+7. Lightweight for real-time systems.
+8. Not ideal for precise ML/DL tasks.
+9. Window size controls smoothing.
+10. Often a first step in denoising.
+
+**Example Use Case:** An ECG from a fitness tracker with minor noise is smoothed with a moving average filter for an ML model to estimate heart rate.
+
+---
+
+### 3. Total Variation Denoising (TVD)
+
+**What is it?**
+TVD is like a smart artist who cleans your ECG drawing by keeping the big shapes (heartbeats) and removing tiny scribbles (noise). It works by minimizing sudden changes in the signal while preserving edges, like QRS peaks, using a mathematical optimization.
+
+**How does it work?**
+- **Step 1**: Define a regularization parameter (controls smoothing strength).
+- **Step 2**: Solve an optimization problem to reduce rapid signal changes (noise) while keeping large changes (heartbeats).
+- **Step 3**: Output the denoised ECG signal.
+
+**Why is it useful for ECG?**
+TVD is excellent for ECGs because it removes noise while keeping sharp transitions like QRS complexes, which are crucial for accurate analysis.
+
+**When to Use in ML/DL?**
+- **Use Case**: Best for preprocessing ECGs for DL models (e.g., CNNs, LSTMs) or ML models for tasks like anomaly detection or beat classification.
+- **Why Choose It?** Preserves edges, enhancing feature extraction for high-precision ML/DL tasks.
+- **ECG Signal Characteristics**:
+  - **Sharp Edges**: Use when QRS complexes must stay sharp.
+  - **Piecewise Constant Signals**: Choose for ECGs with flat regions (e.g., between beats).
+  - **Moderate Noise**: Effective for muscle noise or artifacts.
+  - **High-Precision Tasks**: Select for ML/DL models needing clean features.
+  - **Non-Frequency Noise**: Good when noise isn’t frequency-specific.
+
+**Key Points for Beginners:**
+1. Minimizes rapid signal changes.
+2. Preserves QRS edges.
+3. Requires tuning regularization parameter.
+4. Python’s `skimage.restoration` supports it.
+5. Computationally intensive.
+6. Great for time-domain denoising.
+7. Less effective for baseline wander.
+8. Used in advanced ECG research.
+9. Works well for DL preprocessing.
+10. Needs optimization algorithms.
+
+**Example Use Case:** An ECG with muscle noise is cleaned with TVD for a DL model to detect subtle arrhythmias without losing QRS shapes.
+
+---
+
+### 4. Non-local Means (NLM) Filtering
+
+**What is it?**
+NLM is like a detective who looks for similar patterns across your ECG drawing to clean it up. Instead of just smoothing nearby points, it compares patches (small signal segments) across the entire signal, averaging similar patches to reduce noise while keeping details.
+
+**How does it work?**
+- **Step 1**: Choose a patch size and search window.
+- **Step 2**: For each point, find similar patches in the signal.
+- **Step 3**: Average the similar patches to compute the denoised value.
+- **Step 4**: Output the denoised ECG signal.
+
+**Why is it useful for ECG?**
+NLM preserves fine details like P and T waves by using global signal patterns, making it great for complex ECGs with repetitive structures.
+
+**When to Use in ML/DL?**
+- **Use Case**: Ideal for preprocessing ECGs for DL models (e.g., CNNs) analyzing detailed wave patterns, like atrial fibrillation detection.
+- **Why Choose It?** Preserves subtle ECG features, improving DL model performance on complex tasks.
+- **ECG Signal Characteristics**:
+  - **Repetitive Patterns**: Use for ECGs with similar beats or rhythms.
+  - **Fine Details**: Choose when P and T waves must stay clear.
+  - **Complex Noise**: Effective for muscle noise or random artifacts.
+  - **Long Recordings**: Good for extended ECGs with repetitive structures.
+  - **High-Precision DL**: Select for models needing detailed signal features.
+
+**Key Points for Beginners:**
+1. Averages similar patches across the signal.
+2. Preserves fine ECG details.
+3. Computationally heavy.
+4. Python’s `skimage.restoration` supports it.
+5. Patch size and search window are key parameters.
+6. Great for complex ECGs.
+7. Less effective for baseline wander.
+8. Used in advanced DL research.
+9. Slow for real-time applications.
+10. Enhances subtle wave features.
+
+**Example Use Case:** An ECG with muscle noise is cleaned with NLM for a DL model to detect subtle P-wave changes in atrial fibrillation.
+
+---
+
+### 5. Finite Impulse Response (FIR) Filters
+
+**What is it?**
+An FIR filter is like a precise recipe for smoothing your ECG signal by mixing a fixed number of past signal points with specific weights. It’s a type of filter (low-pass, high-pass, band-pass) that uses a finite number of samples, making it stable and predictable.
+
+**How does it work?**
+- **Step 1**: Choose the filter type (e.g., low-pass) and cutoff frequencies.
+- **Step 2**: Design the filter with a fixed number of taps (coefficients).
+- **Step 3**: Apply the filter by convolving it with the ECG signal.
+- **Step 4**: Output the filtered signal.
+
+**Why is it useful for ECG?**
+FIR filters are stable and have linear phase, meaning they don’t distort the timing of ECG waves, which is critical for accurate ML/DL analysis.
+
+**When to Use in ML/DL?**
+- **Use Case**: Suitable for preprocessing ECGs for ML/DL tasks like QRS detection or heart rate variability (HRV) analysis.
+- **Why Choose It?** Stable and preserves wave timing, ensuring reliable features for models.
+- **ECG Signal Characteristics**:
+  - **Frequency-Specific Noise**: Use for baseline wander or muscle noise.
+  - **Timing Preservation**: Choose when wave timing (e.g., QRS onset) is critical.
+  - **Clinical Settings**: Select for high-quality ECGs in hospitals.
+  - **Real-Time Processing**: Good for fast, stable filtering.
+  - **Known Noise Frequencies**: Effective when noise has clear frequency ranges.
+
+**Key Points for Beginners:**
+1. Uses a fixed number of signal points.
+2. Stable with linear phase.
+3. Python’s `scipy.signal` supports it.
+4. Effective for baseline wander and muscle noise.
+5. More taps = sharper filter but slower.
+6. No feedback, so always stable.
+7. Common in clinical ECG systems.
+8. Can be low-pass, high-pass, or band-pass.
+9. Design requires cutoff frequencies.
+10. Good for real-time ML/DL.
+
+**Example Use Case:** An ECG with baseline wander is cleaned with an FIR high-pass filter for an ML model to analyze HRV accurately.
+
+---
+
+### 6. Infinite Impulse Response (IIR) Filters
+
+**What is it?**
+An IIR filter is like a recipe that mixes past signal points and past filter outputs to smooth the ECG. Unlike FIR, it uses feedback, making it more efficient but potentially less stable. It’s often used as Butterworth or Chebyshev filters.
+
+**How does it work?**
+- **Step 1**: Choose the filter type (e.g., band-pass) and cutoff frequencies.
+- **Step 2**: Design the filter with feedback coefficients.
+- **Step 3**: Apply the filter to the ECG signal.
+- **Step 4**: Output the filtered signal.
+
+**Why is it useful for ECG?**
+IIR filters are efficient, requiring fewer computations than FIR, making them great for real-time ECG processing while removing noise like baseline wander or muscle artifacts.
+
+**When to Use in ML/DL?**
+- **Use Case**: Best for preprocessing ECGs for real-time ML/DL applications, like wearable devices or arrhythmia detection.
+- **Why Choose It?** Efficient and fast, providing clean signals for models with limited resources.
+- **ECG Signal Characteristics**:
+  - **Real-Time Needs**: Use for ECGs needing fast processing.
+  - **Frequency-Specific Noise**: Choose for baseline wander or muscle noise.
+  - **Resource Constraints**: Select for devices with low computational power.
+  - **Tolerable Phase Distortion**: Good when slight timing shifts are okay.
+  - **Clinical or Wearable Use**: Effective for hospital or wearable ECGs.
+
+**Key Points for Beginners:**
+1. Uses feedback for efficiency.
+2. Less stable than FIR but faster.
+3. Python’s `scipy.signal` supports it.
+4. Includes Butterworth, Chebyshev filters.
+5. Effective for baseline wander and muscle noise.
+6. Can distort phase (timing) slightly.
+7. Common in real-time ECG systems.
+8. Requires careful design to avoid instability.
+9. Fewer coefficients than FIR.
+10. Great for wearable ML/DL.
+
+**Example Use Case:** An ECG from a smartwatch with muscle noise is cleaned with an IIR band-pass filter for a DL model to detect arrhythmias in real-time.
+
+---
+
+### End-to-End Example: Savitzky-Golay Filtering in Python
+
+Let’s practice denoising an ECG signal using Savitzky-Golay Filtering with Python, using the MIT-BIH Arrhythmia Database. This example is beginner-friendly and shows how to clean an ECG for ML/DL.
+
+**What You’ll Need:**
+- Python (use Google Colab or Jupyter Notebook).
+- Libraries: `numpy`, `scipy.signal`, `matplotlib`, `wfdb`.
+- A sample ECG from PhysioNet.
+
+**Steps:**
+1. Install libraries.
+2. Load an ECG signal.
+3. Apply Savitzky-Golay filter with a window size and polynomial order.
+4. Visualize the original and denoised signals.
+
+Here’s the complete code, wrapped in an artifact tag:
+
+```python
+import numpy as np
+import scipy.signal as signal
+import matplotlib.pyplot as plt
+import wfdb
+
+# Step 1: Load ECG signal
+record = wfdb.rdrecord('mitdb/100', sampto=1000)  # First 1000 samples
+ecg_signal = record.p_signal[:, 0]  # MLII lead
+
+# Step 2: Apply Savitzky-Golay filter
+window_length = 7  # Window size (must be odd)
+polyorder = 2  # Polynomial order
+ecg_denoised = signal.savgol_filter(ecg_signal, window_length, polyorder)
+
+# Step 3: Plot
+plt.figure(figsize=(12, 6))
+plt.subplot(2, 1, 1)
+plt.plot(ecg_signal, label='Original ECG')
+plt.title('Original ECG Signal')
+plt.legend()
+plt.subplot(2, 1, 2)
+plt.plot(ecg_denoised, label='Denoised ECG (Savitzky-Golay)', color='green')
+plt.title('Denoised ECG Signal (Savitzky-Golay)')
+plt.legend()
+plt.tight_layout()
+plt.show()
+```
+
+**What’s Happening in the Code?**
+- **Loading**: We load record 100 from MIT-BIH (1000 samples).
+- **Filtering**: Apply Savitzky-Golay with a window of 7 points and a 2nd-order polynomial to smooth noise while preserving QRS peaks.
+- **Visualization**: Plot the original (noisy) and denoised signals.
+
+**What to Expect**: The top plot shows the original ECG with small wiggles (noise). The bottom plot is smoother, with clear P, QRS, and T waves, but QRS peaks stay sharp.
+
+**Try It Yourself**: Run in Colab, change `window_length` to 11 or `polyorder` to 3, and see the effect. A larger window smooths more but may blur features.
+
+
 ---
 
 ### Summary 
