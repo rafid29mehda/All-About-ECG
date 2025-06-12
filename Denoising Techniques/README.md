@@ -1,4 +1,4 @@
-## Denoising Techniques**
+## Denoising Techniques
 
 #### **1. Transform-Based Techniques**
 
