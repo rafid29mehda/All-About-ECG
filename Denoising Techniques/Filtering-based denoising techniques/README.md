@@ -1,6 +1,6 @@
 ### What is Denoising and Why Do We Need It for ECG?
 
-Imagine you’re listening to our favorite song, but there’s annoying static or background chatter making it hard to hear the music clearly. In an ECG (electrocardiogram), which records our heart’s electrical activity (showing waves like P, QRS, and T), noise is like that static—unwanted signals from muscle movements, breathing, or electrical devices. Denoising cleans up the ECG to keep only the heart’s signal, which is crucial for ML and DL because noisy data can confuse algorithms, leading to wrong predictions, like missing a heart problem.
+Imagine we’re listening to our favorite song, but there’s annoying static or background chatter making it hard to hear the music clearly. In an ECG (electrocardiogram), which records our heart’s electrical activity (showing waves like P, QRS, and T), noise is like that static—unwanted signals from muscle movements, breathing, or electrical devices. Denoising cleans up the ECG to keep only the heart’s signal, which is crucial for ML and DL because noisy data can confuse algorithms, leading to wrong predictions, like missing a heart problem.
 
 Filtering-based denoising techniques are like special sieves that let the good parts of the ECG signal pass through while blocking the noise. Each technique works differently, depending on the type of noise and the ECG’s characteristics. Let’s dive into each technique, explaining how it works, why it’s useful, when to use it in ML/DL, and which ECG signal characteristics make it the best choice.
 
@@ -145,7 +145,7 @@ Butterworth filters are popular because they provide smooth filtering without in
 - **Use Case**: Great for preprocessing ECGs for ML/DL tasks like QRS detection or arrhythmia classification where smooth signals are needed.
 - **Why Choose It?** Its smooth response ensures clear ECG features, improving model performance.
 - **ECG Signal Characteristics**:
-  - **Smooth Filtering Needed**: Use when you want minimal distortion of P, QRS, T waves.
+  - **Smooth Filtering Needed**: Use when we want minimal distortion of P, QRS, T waves.
   - **Mixed Noise**: Choose for ECGs with baseline wander or muscle noise.
   - **Known Frequency Range**: Select when ECG frequencies (e.g., 0.5-40 Hz) are clear.
   - **Clinical Applications**: Good for hospital-grade ECGs needing high quality.
@@ -251,7 +251,7 @@ Median filtering is great for removing sudden, impulsive noise (like spikes from
 
 Let’s practice denoising an ECG signal using a Butterworth band-pass filter with Python. We’ll use the MIT-BIH Arrhythmia Database for a real ECG signal. This example is beginner-friendly and shows how to clean an ECG for ML/DL.
 
-**What You’ll Need:**
+**What we’ll Need:**
 - Python (use Google Colab or Jupyter Notebook).
 - Libraries: `numpy`, `scipy.signal`, `matplotlib`, `wfdb`.
 - A sample ECG from PhysioNet.
@@ -297,7 +297,7 @@ plt.subplot(2, 1, 2)
 plt.plot(ecg_denoised, label='Denoised ECG (Butterworth)', color='green')
 plt.title('Denoised ECG Signal (Butterworth Band-pass)')
 plt.legend()
-plt.tight_layout()
+plt.tight_lawet()
 plt.show()
 ```
 
@@ -334,7 +334,7 @@ Savitzky-Golay is great for ECGs because it smooths noise (like muscle artifacts
   - **Sharp Features**: Use when preserving QRS complexes is critical.
   - **Moderate Noise**: Choose for ECGs with muscle noise or small artifacts.
   - **Short Recordings**: Effective for short ECGs from wearables.
-  - **Smooth Transitions**: Select when you need smooth P and T waves without distortion.
+  - **Smooth Transitions**: Select when we need smooth P and T waves without distortion.
   - **Real-Time Processing**: Good for fast, lightweight applications.
 
 **Key Points for Beginners:**
@@ -356,7 +356,7 @@ Savitzky-Golay is great for ECGs because it smooths noise (like muscle artifacts
 ### 2. Moving Average Filter
 
 **What is it?**
-A moving average filter is like sliding a magic eraser over your ECG drawing, averaging nearby points to smooth out small scribbles. It takes a window of signal points, calculates their average, and uses that to replace the center point, making the signal less bumpy.
+A moving average filter is like sliding a magic eraser over the ECG drawing, averaging nearby points to smooth out small scribbles. It takes a window of signal points, calculates their average, and uses that to replace the center point, making the signal less bumpy.
 
 **How does it work?**
 - **Step 1**: Choose a window size (e.g., 5 points).
@@ -396,7 +396,7 @@ It’s super simple and reduces high-frequency noise like muscle artifacts, but 
 ### 3. Total Variation Denoising (TVD)
 
 **What is it?**
-TVD is like a smart artist who cleans your ECG drawing by keeping the big shapes (heartbeats) and removing tiny scribbles (noise). It works by minimizing sudden changes in the signal while preserving edges, like QRS peaks, using a mathematical optimization.
+TVD is like a smart artist who cleans the ECG drawing by keeping the big shapes (heartbeats) and removing tiny scribbles (noise). It works by minimizing sudden changes in the signal while preserving edges, like QRS peaks, using a mathematical optimization.
 
 **How does it work?**
 - **Step 1**: Define a regularization parameter (controls smoothing strength).
@@ -435,7 +435,7 @@ TVD is excellent for ECGs because it removes noise while keeping sharp transitio
 ### 4. Non-local Means (NLM) Filtering
 
 **What is it?**
-NLM is like a detective who looks for similar patterns across your ECG drawing to clean it up. Instead of just smoothing nearby points, it compares patches (small signal segments) across the entire signal, averaging similar patches to reduce noise while keeping details.
+NLM is like a detective who looks for similar patterns across the ECG drawing to clean it up. Instead of just smoothing nearby points, it compares patches (small signal segments) across the entire signal, averaging similar patches to reduce noise while keeping details.
 
 **How does it work?**
 - **Step 1**: Choose a patch size and search window.
@@ -475,7 +475,7 @@ NLM preserves fine details like P and T waves by using global signal patterns, m
 ### 5. Finite Impulse Response (FIR) Filters
 
 **What is it?**
-An FIR filter is like a precise recipe for smoothing your ECG signal by mixing a fixed number of past signal points with specific weights. It’s a type of filter (low-pass, high-pass, band-pass) that uses a finite number of samples, making it stable and predictable.
+An FIR filter is like a precise recipe for smoothing the ECG signal by mixing a fixed number of past signal points with specific weights. It’s a type of filter (low-pass, high-pass, band-pass) that uses a finite number of samples, making it stable and predictable.
 
 **How does it work?**
 - **Step 1**: Choose the filter type (e.g., low-pass) and cutoff frequencies.
@@ -556,7 +556,7 @@ IIR filters are efficient, requiring fewer computations than FIR, making them gr
 
 Let’s practice denoising an ECG signal using Savitzky-Golay Filtering with Python, using the MIT-BIH Arrhythmia Database. This example is beginner-friendly and shows how to clean an ECG for ML/DL.
 
-**What You’ll Need:**
+**What we’ll Need:**
 - Python (use Google Colab or Jupyter Notebook).
 - Libraries: `numpy`, `scipy.signal`, `matplotlib`, `wfdb`.
 - A sample ECG from PhysioNet.
@@ -594,7 +594,7 @@ plt.subplot(2, 1, 2)
 plt.plot(ecg_denoised, label='Denoised ECG (Savitzky-Golay)', color='green')
 plt.title('Denoised ECG Signal (Savitzky-Golay)')
 plt.legend()
-plt.tight_layout()
+plt.tight_laout()
 plt.show()
 ```
 
@@ -605,15 +605,15 @@ plt.show()
 
 **What to Expect**: The top plot shows the original ECG with small wiggles (noise). The bottom plot is smoother, with clear P, QRS, and T waves, but QRS peaks stay sharp.
 
-**Try It Yourself**: Run in Colab, change `window_length` to 11 or `polyorder` to 3, and see the effect. A larger window smooths more but may blur features.
+**Try It theself**: Run in Colab, change `window_length` to 11 or `polyorder` to 3, and see the effect. A larger window smooths more but may blur features.
 
 
 ---
 
 ### Summary 
 
-Denoising ECG signals is like cleaning a messy picture to show the heart’s story clearly. Filtering techniques—Low-pass/High-pass, Band-pass, Notch, Butterworth, Chebyshev, and Median—are like different sieves that catch specific types of noise. Low-pass/High-pass and Band-pass target frequency ranges, Notch zaps powerline hums, Butterworth and Chebyshev smooth signals (with Chebyshev being stricter), and Median removes spikes. The “When to Use in ML/DL” sections help you choose based on the ECG’s noise and ML/DL task.
+Denoising ECG signals is like cleaning a messy picture to show the heart’s story clearly. Filtering techniques—Low-pass/High-pass, Band-pass, Notch, Butterworth, Chebyshev, and Median—are like different sieves that catch specific types of noise. Low-pass/High-pass and Band-pass target frequency ranges, Notch zaps powerline hums, Butterworth and Chebyshev smooth signals (with Chebyshev being stricter), and Median removes spikes. The “When to Use in ML/DL” sections help we choose based on the ECG’s noise and ML/DL task.
 
 For our PhD prep, start with Butterworth filters—they’re smooth and widely used, with easy Python tools like `scipy.signal`. Try the code example above, then explore Notch or Median filtering for specific noises. These skills will prepare our ECG data for ML/DL models to detect heart diseases.
 
-If you need more examples, explanations, or help with other ECG topics, just let me know!
+If we need more examples, explanations, or help with other ECG topics, just let me know!
