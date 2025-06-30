@@ -565,4 +565,4 @@ Let’s imagine you’re a PhD student analyzing an ECG from the MIT-BIH Arrhyth
 ### Step 7: Summarize
 - **Findings**: The ECG was loaded (WFDB), filtered (SciPy), QRS peaks detected (BioSPPy), denoised (PyWavelets), features extracted (NeuroKit2), visualized (Matplotlib), and used to train a CNN (TensorFlow).
 - **Outcome**: The processed ECG is ready for ML/DL research, with a model to classify normal vs. PVC beats.
-- **Next Steps**: Evaluate the model on a test set or use more data (e.g., PTB-XL).
+
