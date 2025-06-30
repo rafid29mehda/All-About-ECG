@@ -1,4 +1,4 @@
-### What is Denoising and Why Do We Need It for ECG?
+### What is Denoising in ECG?
 
 Imagine we’re trying to hear our favorite song on a radio, but there’s buzzing and crackling static making it hard to enjoy. In an ECG (electrocardiogram), which records our heart’s electrical activity (like P, QRS, and T waves), the “static” is noise—unwanted signals from things like muscle movements, breathing, or electrical devices. Denoising is like turning down the static to hear the heart’s signal clearly.
 
