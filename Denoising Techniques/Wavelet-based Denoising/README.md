@@ -318,4 +318,3 @@ Denoising cleans ECG signals like wiping dust off a picture. The transform-based
 
 Start with Wavelet-based Denoising for our PhD prep—it’s popular and easy with `pywt`. Try the code example, then explore EMD or VMD with `PyEMD` or `vmdpy`. These skills will make our ECG data ready for ML/DL to find heart diseases.
 
-Let me know if we need more examples, explanations, or help with other ECG topics!
