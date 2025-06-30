@@ -2,7 +2,7 @@
 
 Imagine we’re listening to our favorite song, but there’s annoying static or background chatter making it hard to hear the music clearly. In an ECG (electrocardiogram), which records our heart’s electrical activity (showing waves like P, QRS, and T), noise is like that static—unwanted signals from muscle movements, breathing, or electrical devices. Denoising cleans up the ECG to keep only the heart’s signal, which is crucial for ML and DL because noisy data can confuse algorithms, leading to wrong predictions, like missing a heart problem.
 
-Filtering-based denoising techniques are like special sieves that let the good parts of the ECG signal pass through while blocking the noise. Each technique works differently, depending on the type of noise and the ECG’s characteristics. Let’s dive into each technique, explaining how it works, why it’s useful, when to use it in ML/DL, and which ECG signal characteristics make it the best choice.
+Filtering-based denoising techniques are like special sieves that let the good parts of the ECG signal pass through while blocking the noise. Each technique works differently, depending on the type of noise and the ECG’s characteristics.
 
 ---
 
