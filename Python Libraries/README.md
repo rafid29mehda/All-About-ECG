@@ -1,7 +1,5 @@
 # Libraries for ECG Signal Processing
 
-Below is a comprehensive list of libraries commonly used for ECG signal processing, particularly in Python, which is the go-to language for biomedical signal research due to its simplicity and rich ecosystem. Each library is explained with its purpose, key features, ECG-specific applications, and an example usage.
-
 ## 1. WFDB (WaveForm DataBase)
 ### What is it?
 **WFDB** is a Python library designed for reading, writing, and processing physiological signals, especially ECGs, in formats used by PhysioNet. It’s like a librarian who helps you find and organize ECG “books” (data files).
