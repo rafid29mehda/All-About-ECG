@@ -1,7 +1,5 @@
 ### What is Feature Extraction in ECG?
 
-Imagine an ECG (electrocardiogram) as a story written by the heart. It’s a wiggly line on a graph that shows how the heart’s electrical signals change over time. But this line is packed with information, and we need to pull out specific pieces—called **features**—to understand what’s happening, like whether the heart is beating normally or if there’s a problem.
-
 **Feature extraction** is the process of finding and measuring these important pieces of information from the ECG signal. These features are like puzzle pieces that we can feed into a computer (using machine learning or deep learning) to detect heart diseases, classify heartbeats, or predict health issues. There are three main types of features we’ll explore:
 
 1. **Time-Domain Features**: These focus on the timing and shape of the ECG signal in the time dimension (like how long a heartbeat takes or how tall a wave is).
