@@ -1498,7 +1498,7 @@ print("Selected Feature Indices (Random Forest):", selected_features)
 - **Output**: Prints the importance scores and selects the indices of the top 2 features (e.g., [0, 1] for RR intervals and QRS amplitudes if they’re most important).
 - **Practical Note**: For real ECG data, use Physionet’s MIT-BIH Arrhythmia Database with `wfdb` to load labeled signals. Standardize features (e.g., using `StandardScaler`) for better performance.
 
-**Analogy**: Imagine you’re baking a cake and trying different ingredients (features). The Random Forest tells you which ingredients (e.g., sugar, flour) make the cake taste best by scoring their impact on the final flavor.
+**Analogy**: Imagine you’re baking a cake and trying different ingredients (features). The Random Forest tells we which ingredients (e.g., sugar, flour) make the cake taste best by scoring their impact on the final flavor.
 
 ---
 
