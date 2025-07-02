@@ -1060,19 +1060,19 @@ print("Chirplet Transform Approximation Shape (scales, times):", cwt_matrix.shap
 ### Practical Tips for ECG Feature Extraction
 
 1. **Start with Time-Domain Features**: They’re the easiest to compute and understand. Use `neurokit2` to automate peak detection.
-2. **Clean we Signal**: Noise (e.g., baseline wander, muscle artifacts) can ruin feature extraction. Apply filters (e.g., bandpass) before processing.
+2. **Clean the Signal**: Noise (e.g., baseline wander, muscle artifacts) can ruin feature extraction. Apply filters (e.g., bandpass) before processing.
 3. **Use Real Data**: Download ECG data from Physionet (e.g., MIT-BIH Arrhythmia Database) to practice on real signals.
-4. **Visualize Results**: Plot we ECG signal, peaks, PSD, or spectrograms to verify we features.
+4. **Visualize Results**: Plot the ECG signal, peaks, PSD, or spectrograms to verify the features.
 5. **Combine Features**: For machine learning, combine time-domain, frequency-domain, and time-frequency features to capture diverse patterns.
 6. **Handle Short Signals**: The example signals are short (1–2 seconds). For HRV or frequency-domain features, use longer signals (e.g., 5 minutes) for better accuracy.
 7. **Learn Libraries**: Master `neurokit2`, `biosppy`, `scipy`, and `pywt` for ECG processing. They simplify complex math.
-8. **Check Sampling Rate**: Ensure we sampling rate (e.g., 360 Hz) matches we data to avoid errors in time calculations.
+8. **Check Sampling Rate**: Ensure the sampling rate (e.g., 360 Hz) matches the data to avoid errors in time calculations.
 
-### How These Fit into we PhD
+### How These Fit into the PhD
 
-These feature extraction techniques are building blocks for we research in Biomedical Signal Processing. You can:
+These feature extraction techniques are building blocks for the research in Biomedical Signal Processing. You can:
 - Use **time-domain features** (e.g., RR intervals, PR intervals) for simple machine learning models like Random Forests to classify arrhythmias.
 - Use **frequency-domain features** (e.g., LF/HF ratio) for heart rate variability analysis, useful for stress or autonomic studies.
 - Use **time-frequency features** (e.g., spectrograms, scalograms) as inputs to deep learning models like CNNs for complex pattern detection (e.g., atrial fibrillation).
 
-By practicing these techniques on datasets like MIT-BIH or PTB-XL, you’ll gain hands-on experience for we PhD. Start with the provided code, experiment with real ECG data, and explore how these features improve model performance in detecting heart conditions. If you hit roadblocks, keep tweaking parameters or ask for help—you’re learning a powerful skillset!
+By practicing these techniques on datasets like MIT-BIH or PTB-XL, you’ll gain hands-on experience for the PhD. Start with the provided code, experiment with real ECG data, and explore how these features improve model performance in detecting heart conditions. If you hit roadblocks, keep tweaking parameters or ask for help—you’re learning a powerful skillset!
