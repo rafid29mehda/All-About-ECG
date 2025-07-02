@@ -1,6 +1,6 @@
 ### What is Feature Extraction in ECG?
 
-Imagine an ECG (electrocardiogram) as a story written by your heart. It’s a wiggly line on a graph that shows how your heart’s electrical signals change over time. But this line is packed with information, and we need to pull out specific pieces—called **features**—to understand what’s happening, like whether the heart is beating normally or if there’s a problem.
+Imagine an ECG (electrocardiogram) as a story written by the heart. It’s a wiggly line on a graph that shows how the heart’s electrical signals change over time. But this line is packed with information, and we need to pull out specific pieces—called **features**—to understand what’s happening, like whether the heart is beating normally or if there’s a problem.
 
 **Feature extraction** is the process of finding and measuring these important pieces of information from the ECG signal. These features are like puzzle pieces that we can feed into a computer (using machine learning or deep learning) to detect heart diseases, classify heartbeats, or predict health issues. There are three main types of features we’ll explore:
 
@@ -343,7 +343,7 @@ In a PhD project, you might:
 ### Tips for Learning More
 - **Practice with Real Data**: Download ECG data from Physionet (e.g., MIT-BIH Arrhythmia Database) and try extracting these features.
 - **Use Libraries**: Neurokit2, Biosppy, and SciPy are great for beginners. They handle complex math for you.
-- **Visualize Everything**: Plot your signals, peaks, and spectrograms to understand what’s happening.
+- **Visualize Everything**: Plot the signals, peaks, and spectrograms to understand what’s happening.
 - **Start Small**: Begin with time-domain features (they’re the easiest), then move to frequency and time-frequency features as you get comfortable.
 - 
 
@@ -637,13 +637,13 @@ When you run this code:
 - It prints the wavelet energy for each scale, showing how much signal energy is at different “zooms.”
 - It shows a scalogram, where the x-axis is time, the y-axis is scale (inversely related to frequency), and the color shows amplitude.
 
-**Practical Note**: The Morlet wavelet is good for ECGs because it balances time and frequency resolution. You can experiment with other wavelets (e.g., Daubechies, Mexican Hat) depending on your research needs.
+**Practical Note**: The Morlet wavelet is good for ECGs because it balances time and frequency resolution. You can experiment with other wavelets (e.g., Daubechies, Mexican Hat) depending on the research needs.
 
 ---
 
 ### Putting It All Together
 
-Let’s summarize how these features fit into ECG analysis and your PhD journey:
+Let’s summarize how these features fit into ECG analysis and the PhD journey:
 
 1. **Morphological Features** (e.g., QRS Amplitude, T-Wave Shape):
    - Focus on the shape and size of ECG waves.
@@ -667,12 +667,12 @@ Let’s summarize how these features fit into ECG analysis and your PhD journey:
 
 1. **Start Simple**: Begin with morphological and statistical features—they’re easier to understand and compute. Use `neurokit2` for automated peak detection.
 2. **Practice with Real Data**: Download ECG datasets from Physionet (e.g., MIT-BIH Arrhythmia Database) to test these techniques on real signals.
-3. **Visualize Everything**: Plot your ECG signals, peaks, and scalograms to see what the features represent. Visualization helps you spot errors.
+3. **Visualize Everything**: Plot the ECG signals, peaks, and scalograms to see what the features represent. Visualization helps you spot errors.
 4. **Combine Features**: For machine learning, combine morphological (e.g., QRS amplitude), statistical (e.g., variance), and wavelet-based (e.g., wavelet energy) features to improve model accuracy.
 5. **Handle Noise**: ECG signals often have noise (e.g., muscle artifacts). Clean the signal with filters (e.g., bandpass) before extracting features.
 6. **Learn Libraries**: Master `neurokit2` for morphological features, `numpy` and `scipy` for statistical features, and `pywt` for wavelet features.
 7. **Experiment with Scales**: For wavelet features, try different scales or wavelets to see which capture the ECG patterns best.
-8. **Think About Your PhD**: These features are building blocks for your research. For example, you could use wavelet energy to detect premature ventricular contractions or statistical features to analyze heart rate variability.
+8. **Think About the PhD**: These features are building blocks for the research. For example, you could use wavelet energy to detect premature ventricular contractions or statistical features to analyze heart rate variability.
 
 ### Next Steps
 
@@ -772,7 +772,7 @@ When you run this code:
 - It prints the **Sample Entropy**, showing the signal’s regularity.
 - It shows a plot of the ECG signal.
 
-**Practical Note**: Sample Entropy is sensitive to parameters like `emb_dim` and `tolerance`. Experiment with these for your specific ECG data. For longer signals (e.g., 5 minutes), entropy measures are more reliable.
+**Practical Note**: Sample Entropy is sensitive to parameters like `emb_dim` and `tolerance`. Experiment with these for the specific ECG data. For longer signals (e.g., 5 minutes), entropy measures are more reliable.
 
 ---
 
@@ -895,7 +895,7 @@ Here’s a list of important techniques for ECG analysis:
 
 ### Why Are These Important?
 
-Dimensionality reduction makes your analysis faster and easier:
+Dimensionality reduction makes the analysis faster and easier:
 - **PCA** reduces dozens of features (e.g., QRS amplitudes, entropies) to a few components that capture most of the variation.
 - **t-SNE** helps visualize high-dimensional ECG data in 2D or 3D, making it easier to spot patterns.
 - These techniques improve machine learning performance by removing redundant or noisy features.
@@ -988,7 +988,7 @@ When you run this code:
 
 ### What Are Feature Selection Methods?
 
-Feature selection is like choosing the best ingredients for a cake. You might have many ECG features (e.g., QRS amplitude, entropy, etc.), but not all are equally useful for detecting heart conditions. Feature selection picks the most important features to make your machine learning model faster, simpler, and more accurate.
+Feature selection is like choosing the best ingredients for a cake. You might have many ECG features (e.g., QRS amplitude, entropy, etc.), but not all are equally useful for detecting heart conditions. Feature selection picks the most important features to make the machine learning model faster, simpler, and more accurate.
 
 ### Key Feature Selection Methods
 
@@ -1006,7 +1006,7 @@ Here’s a list of important feature selection methods for ECG analysis:
 
 ### Why Are These Important?
 
-Feature selection improves your analysis:
+Feature selection improves the analysis:
 - **Filter Methods** are fast and simple, great for quick feature ranking.
 - **Wrapper Methods** like RFE find the best feature combinations but are computationally expensive.
 - **Embedded Methods** like Lasso combine feature selection with model training, saving time.
@@ -1092,7 +1092,7 @@ When you run this code:
 
 ### Putting It All Together
 
-Let’s summarize how these features and methods fit into ECG analysis and your PhD journey:
+Let’s summarize how these features and methods fit into ECG analysis and the PhD journey:
 
 1. **Entropy-Based Features** (e.g., Shannon Entropy, Sample Entropy):
    - Measure signal unpredictability, great for detecting arrhythmias.
@@ -1124,10 +1124,10 @@ Let’s summarize how these features and methods fit into ECG analysis and your 
    ecg_signal = record.p_signal[:, 0]
    ```
 3. **Clean Signals**: Apply filters (e.g., bandpass 0.5–40 Hz) to remove noise before feature extraction.
-4. **Visualize Results**: Plot ECG signals, Poincaré plots, or feature importance to verify your work.
+4. **Visualize Results**: Plot ECG signals, Poincaré plots, or feature importance to verify the work.
 5. **Combine Features**: Use entropy, nonlinear, and other features together in machine learning models for robust analysis.
-6. **Experiment with Parameters**: Tune parameters like `emb_dim` for entropy or `n_components` for PCA based on your data.
-7. **Optimize for Research**: For your PhD, test these features on specific heart conditions (e.g., ventricular tachycardia) and evaluate their impact on model accuracy.
+6. **Experiment with Parameters**: Tune parameters like `emb_dim` for entropy or `n_components` for PCA based on the data.
+7. **Optimize for Research**: For the PhD, test these features on specific heart conditions (e.g., ventricular tachycardia) and evaluate their impact on model accuracy.
 
 ### Next Steps
 
