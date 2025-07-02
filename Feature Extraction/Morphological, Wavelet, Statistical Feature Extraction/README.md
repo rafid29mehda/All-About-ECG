@@ -1052,4 +1052,4 @@ print("Wavelet Kurtosis per Scale:", wavelet_kurtosis)
 7. **Handle Noise**: Noise can distort morphological and wavelet features. Use `neurokit2` or `scipy` filters to preprocess.
 8. **Optimize for Research**: For the PhD, test these features on specific conditions (e.g., arrhythmias) and evaluate their impact on model performance.
 
-These techniques provide a solid foundation for extracting ECG features, enabling you to analyze heart signals effectively in the Biomedical Signal Processing research. Practice with these codes, try real datasets, and explore how these features enhance the machine learning models!
+These techniques provide a solid foundation for extracting ECG features, enabling the to analyze heart signals effectively in the Biomedical Signal Processing research. Practice with these codes, try real datasets, and explore how these features enhance the machine learning models!
