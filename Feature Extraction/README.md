@@ -16,7 +16,7 @@ Imagine an ECG (electrocardiogram) as a story written by the heart. It’s a wig
 10. **Feature Selection Methods**: These pick the best features for analysis, like choosing the most important ingredients for a recipe.
 
 
-Let’s break each one down with explanations and examples, so you can understand them step by step.
+Let’s break each one down with explanations and examples, so we can understand them step by step.
 
 ---
 
@@ -32,7 +32,7 @@ An ECG signal has specific parts, like waves and intervals, that tell us about t
 - **QRS Complex**: The big spike (Q is a dip, R is a peak, S is another dip), showing the ventricles (lower heart chambers) contracting.
 - **T Wave**: The wave after the QRS, showing the ventricles relaxing.
 
-Time-domain features measure things like the time between these waves, their heights, or their shapes. Let’s look at some key time-domain features, starting with the ones you mentioned: **RR Interval** and **PR Interval**.
+Time-domain features measure things like the time between these waves, their heights, or their shapes. Let’s look at some key time-domain features, starting with the ones we mentioned: **RR Interval** and **PR Interval**.
 
 ### Key Time-Domain Features
 
@@ -63,7 +63,7 @@ These features are simple to compute and are often used in traditional ECG analy
 Let’s walk through a simple example of how to extract **RR Interval** and **PR Interval** from an ECG signal using Python. We’ll use the **Neurokit2** library, which is beginner-friendly for ECG processing.
 
 #### Step 1: Install Required Tools
-You need Python and some libraries. If you don’t have them, install them using:
+we need Python and some libraries. If we don’t have them, install them using:
 ```bash
 pip install neurokit2 numpy matplotlib
 ```
@@ -129,7 +129,7 @@ plt.show()
 7. **Visualize**: We plot the ECG with marked R and P peaks to see where they are.
 
 #### What You’ll See
-When you run this code, it will:
+When we run this code, it will:
 - Print the RR intervals (e.g., time between heartbeats in seconds).
 - Print the PR intervals (e.g., time from atrial to ventricular activation).
 - Show a graph of the ECG signal with red dots for R-peaks and green dots for P-peaks.
@@ -144,7 +144,7 @@ This is a simple way to extract time-domain features. In a real project, you’d
 
 Frequency-domain features look at the ECG signal in terms of its **frequencies**—how fast or slow the signal “vibrates.” Instead of measuring time or amplitude directly, we transform the ECG signal into a frequency spectrum to see which frequencies are present and how strong they are. This is useful because some heart conditions (like arrhythmias) show up as specific frequency patterns.
 
-Think of the ECG as music: time-domain features are like the notes you hear, while frequency-domain features are like the pitch or tone of the music. We use mathematical tools like the **Fourier Transform** to convert the ECG from time to frequency.
+Think of the ECG as music: time-domain features are like the notes we hear, while frequency-domain features are like the pitch or tone of the music. We use mathematical tools like the **Fourier Transform** to convert the ECG from time to frequency.
 
 ### Key Frequency-Domain Features
 
@@ -230,7 +230,7 @@ print("LF/HF Ratio:", lf_power / hf_power)
 5. **LF/HF Ratio**: We compute the ratio to assess the balance between sympathetic and parasympathetic activity.
 
 #### What You’ll See
-When you run this code, it will:
+When we run this code, it will:
 - Show a graph of the PSD, with peaks indicating dominant frequencies in the ECG.
 - Print the LF power, HF power, and LF/HF ratio, which are useful for HRV analysis.
 
@@ -319,11 +319,11 @@ print("Total Energy in 0–10 Hz Band:", band_energy)
 4. **Band Energy**: We calculate the total energy in the 0–10 Hz band by summing the squared magnitudes of the STFT in that frequency range.
 
 #### What You’ll See
-When you run this code, it will:
+When we run this code, it will:
 - Show a spectrogram, where brighter colors indicate stronger frequencies at specific times.
 - Print the total energy in the 0–10 Hz band, which could be used as a feature for machine learning.
 
-In a real project, you might feed the spectrogram into a CNN to classify heart conditions or use wavelet coefficients for more detailed analysis.
+In a real project, we might feed the spectrogram into a CNN to classify heart conditions or use wavelet coefficients for more detailed analysis.
 
 ---
 
@@ -335,7 +335,7 @@ Now that you’ve learned about **time-domain**, **frequency-domain**, and **tim
 2. **Frequency-Domain Features** (like PSD) reveal the hidden “vibrations” in the ECG, useful for HRV analysis and detecting rhythmic patterns.
 3. **Time-Frequency Domain Features** (like STFT) capture how the ECG changes over time, perfect for dynamic conditions like arrhythmias.
 
-In a PhD project, you might:
+In a PhD project, we might:
 - Extract time-domain features (e.g., RR intervals) and frequency-domain features (e.g., LF/HF ratio) to train a simple machine learning model like a Random Forest.
 - Use time-frequency features (e.g., spectrograms) as input to a deep learning model like a CNN to detect complex patterns.
 - Combine all three types of features to improve model accuracy.
@@ -344,7 +344,7 @@ In a PhD project, you might:
 - **Practice with Real Data**: Download ECG data from Physionet (e.g., MIT-BIH Arrhythmia Database) and try extracting these features.
 - **Use Libraries**: Neurokit2, Biosppy, and SciPy are great for beginners. They handle complex math for you.
 - **Visualize Everything**: Plot the signals, peaks, and spectrograms to understand what’s happening.
-- **Start Small**: Begin with time-domain features (they’re the easiest), then move to frequency and time-frequency features as you get comfortable.
+- **Start Small**: Begin with time-domain features (they’re the easiest), then move to frequency and time-frequency features as we get comfortable.
 - 
 
 
@@ -387,7 +387,7 @@ These features are critical in traditional ECG analysis by doctors and are also 
 
 ### End-to-End Example: Extracting QRS Amplitude and T-Wave Shape
 
-Let’s extract **QRS Amplitude** (height of the R peak) and **T-Wave Shape** (checking if the T wave is peaked, flat, or inverted) using Python and the `neurokit2` library. We’ll use a simulated ECG signal for simplicity, but you can replace it with real data from Physionet.
+Let’s extract **QRS Amplitude** (height of the R peak) and **T-Wave Shape** (checking if the T wave is peaked, flat, or inverted) using Python and the `neurokit2` library. We’ll use a simulated ECG signal for simplicity, but we can replace it with real data from Physionet.
 
 #### Step 1: Install Required Tools
 Install the libraries:
@@ -452,12 +452,12 @@ plt.show()
 6. **Visualize**: We plot the ECG with red dots for R peaks and green dots for T peaks to see the results.
 
 #### What You’ll See
-When you run this code:
+When we run this code:
 - It prints the QRS amplitudes (in millivolts) for each R peak.
 - It classifies the T-wave shape for each T peak (e.g., “Positive (Peaked)” or “Negative (Inverted)”).
 - It shows a plot of the ECG signal with marked R and T peaks.
 
-**Practical Note**: T-wave shape analysis is simplified here. In research, you might analyze the full T-wave morphology (e.g., area under the curve or symmetry) using more advanced methods.
+**Practical Note**: T-wave shape analysis is simplified here. In research, we might analyze the full T-wave morphology (e.g., area under the curve or symmetry) using more advanced methods.
 
 ---
 
@@ -494,7 +494,7 @@ These features are simple to compute and are often used in machine learning mode
 
 ### End-to-End Example: Extracting Mean, Variance, and Skewness
 
-Let’s extract **Mean**, **Variance**, and **Skewness** from an ECG signal using Python and the `numpy` and `scipy` libraries. We’ll work with a simulated ECG signal, but you can use real data later.
+Let’s extract **Mean**, **Variance**, and **Skewness** from an ECG signal using Python and the `numpy` and `scipy` libraries. We’ll work with a simulated ECG signal, but we can use real data later.
 
 #### Step 1: Install Required Tools
 Install the libraries:
@@ -538,14 +538,14 @@ plt.show()
 2. **Mean**: `np.mean` calculates the average amplitude of the signal.
 3. **Variance**: `np.var` measures how much the signal’s values spread out from the mean.
 4. **Skewness**: `stats.skew` checks if the signal’s values are lopsided (e.g., more high or low values).
-5. **Visualize**: We plot the ECG signal with a red dashed line showing the mean to help you see the central tendency.
+5. **Visualize**: We plot the ECG signal with a red dashed line showing the mean to help we see the central tendency.
 
 #### What You’ll See
-When you run this code:
+When we run this code:
 - It prints the mean (average amplitude), variance (spread), and skewness (asymmetry) of the ECG signal.
 - It shows a plot of the ECG signal with the mean marked as a horizontal line.
 
-**Practical Note**: Statistical features are often calculated over specific segments (e.g., per heartbeat). You can segment the ECG using R-peak detection (as shown in the morphological features example) and compute these features for each segment.
+**Practical Note**: Statistical features are often calculated over specific segments (e.g., per heartbeat). we can segment the ECG using R-peak detection (as shown in the morphological features example) and compute these features for each segment.
 
 ---
 
@@ -632,12 +632,12 @@ plt.show()
 5. **Visualize**: We plot the scalogram (squared magnitude of CWT) as a heatmap, where brighter colors show stronger wavelet coefficients at specific times and scales.
 
 #### What You’ll See
-When you run this code:
+When we run this code:
 - It prints the shape of the wavelet coefficient matrix (e.g., 63 scales × 720 time points).
 - It prints the wavelet energy for each scale, showing how much signal energy is at different “zooms.”
 - It shows a scalogram, where the x-axis is time, the y-axis is scale (inversely related to frequency), and the color shows amplitude.
 
-**Practical Note**: The Morlet wavelet is good for ECGs because it balances time and frequency resolution. You can experiment with other wavelets (e.g., Daubechies, Mexican Hat) depending on the research needs.
+**Practical Note**: The Morlet wavelet is good for ECGs because it balances time and frequency resolution. we can experiment with other wavelets (e.g., Daubechies, Mexican Hat) depending on the research needs.
 
 ---
 
@@ -667,12 +667,12 @@ Let’s summarize how these features fit into ECG analysis and the PhD journey:
 
 1. **Start Simple**: Begin with morphological and statistical features—they’re easier to understand and compute. Use `neurokit2` for automated peak detection.
 2. **Practice with Real Data**: Download ECG datasets from Physionet (e.g., MIT-BIH Arrhythmia Database) to test these techniques on real signals.
-3. **Visualize Everything**: Plot the ECG signals, peaks, and scalograms to see what the features represent. Visualization helps you spot errors.
+3. **Visualize Everything**: Plot the ECG signals, peaks, and scalograms to see what the features represent. Visualization helps we spot errors.
 4. **Combine Features**: For machine learning, combine morphological (e.g., QRS amplitude), statistical (e.g., variance), and wavelet-based (e.g., wavelet energy) features to improve model accuracy.
 5. **Handle Noise**: ECG signals often have noise (e.g., muscle artifacts). Clean the signal with filters (e.g., bandpass) before extracting features.
 6. **Learn Libraries**: Master `neurokit2` for morphological features, `numpy` and `scipy` for statistical features, and `pywt` for wavelet features.
 7. **Experiment with Scales**: For wavelet features, try different scales or wavelets to see which capture the ECG patterns best.
-8. **Think About the PhD**: These features are building blocks for the research. For example, you could use wavelet energy to detect premature ventricular contractions or statistical features to analyze heart rate variability.
+8. **Think About the PhD**: These features are building blocks for the research. For example, we could use wavelet energy to detect premature ventricular contractions or statistical features to analyze heart rate variability.
 
 ### Next Steps
 
@@ -714,7 +714,7 @@ These features are great for machine learning models to classify heart condition
 
 ### End-to-End Example: Extracting Shannon Entropy and Sample Entropy
 
-Let’s extract **Shannon Entropy** and **Sample Entropy** from an ECG signal using Python. We’ll use the `numpy` library for Shannon Entropy and the `nolds` library for Sample Entropy. We’ll work with a simulated ECG signal, but you can adapt it for real data.
+Let’s extract **Shannon Entropy** and **Sample Entropy** from an ECG signal using Python. We’ll use the `numpy` library for Shannon Entropy and the `nolds` library for Sample Entropy. We’ll work with a simulated ECG signal, but we can adapt it for real data.
 
 #### Step 1: Install Required Tools
 Install the libraries:
@@ -767,7 +767,7 @@ plt.show()
 4. **Visualize**: Plot the ECG signal to see what we’re analyzing.
 
 #### What You’ll See
-When you run this code:
+When we run this code:
 - It prints the **Shannon Entropy** (e.g., in bits), showing how unpredictable the signal’s amplitude is.
 - It prints the **Sample Entropy**, showing the signal’s regularity.
 - It shows a plot of the ECG signal.
@@ -864,7 +864,7 @@ plt.show()
 4. **Visualize**: Plot the Poincaré plot, where each point shows an RR interval versus the next one.
 
 #### What You’ll See
-When you run this code:
+When we run this code:
 - It prints the **Largest Lyapunov Exponent**, indicating the signal’s chaotic behavior.
 - It prints **SD1** and **SD2** from the Poincaré plot, showing heart rate variability.
 - It shows a scatter plot where each point represents consecutive RR intervals.
@@ -976,7 +976,7 @@ plt.show()
 5. **Visualize**: Plot the reduced features in 2D scatter plots for PCA and t-SNE.
 
 #### What You’ll See
-When you run this code:
+When we run this code:
 - It prints the shape of the reduced features and PCA’s explained variance ratio.
 - It shows two scatter plots: one for PCA (showing main directions of variation) and one for t-SNE (showing clustered patterns).
 
@@ -988,7 +988,7 @@ When you run this code:
 
 ### What Are Feature Selection Methods?
 
-Feature selection is like choosing the best ingredients for a cake. You might have many ECG features (e.g., QRS amplitude, entropy, etc.), but not all are equally useful for detecting heart conditions. Feature selection picks the most important features to make the machine learning model faster, simpler, and more accurate.
+Feature selection is like choosing the best ingredients for a cake. we might have many ECG features (e.g., QRS amplitude, entropy, etc.), but not all are equally useful for detecting heart conditions. Feature selection picks the most important features to make the machine learning model faster, simpler, and more accurate.
 
 ### Key Feature Selection Methods
 
@@ -1081,7 +1081,7 @@ plt.show()
 5. **Visualize**: Plot the Random Forest importances as a bar chart.
 
 #### What You’ll See
-When you run this code:
+When we run this code:
 - It prints **Mutual Information Scores** for each feature.
 - It prints **Random Forest Importances** for each feature.
 - It shows a bar plot of feature importances.
