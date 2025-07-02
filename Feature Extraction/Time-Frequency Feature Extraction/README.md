@@ -71,7 +71,7 @@ pr_intervals = [(qrs_onsets[i] - p_onsets[i]) / sampling_rate for i in range(min
 print("PR Intervals (seconds):", pr_intervals)
 ```
 
-**Explanation**: The code detects P wave and QRS onsets using `neurokit2` and computes the time difference. If onsets are missing, you may need manual detection or better signal quality.
+**Explanation**: The code detects P wave and QRS onsets using `neurokit2` and computes the time difference. If onsets are missing, we may need manual detection or better signal quality.
 
 ---
 
@@ -367,7 +367,7 @@ for i in range(min(len(s_offsets), len(t_onsets))):
 print("ST Segment Amplitudes (mV):", st_amplitudes)
 ```
 
-**Explanation**: The code approximates the ST segment by taking the midpoint between S offset and T onset. In practice, you may need to average over a segment window for accuracy.
+**Explanation**: The code approximates the ST segment by taking the midpoint between S offset and T onset. In practice, we may need to average over a segment window for accuracy.
 
 ---
 
@@ -1070,9 +1070,9 @@ print("Chirplet Transform Approximation Shape (scales, times):", cwt_matrix.shap
 
 ### How These Fit into the PhD
 
-These feature extraction techniques are building blocks for the research in Biomedical Signal Processing. You can:
+These feature extraction techniques are building blocks for the research in Biomedical Signal Processing. we can:
 - Use **time-domain features** (e.g., RR intervals, PR intervals) for simple machine learning models like Random Forests to classify arrhythmias.
 - Use **frequency-domain features** (e.g., LF/HF ratio) for heart rate variability analysis, useful for stress or autonomic studies.
 - Use **time-frequency features** (e.g., spectrograms, scalograms) as inputs to deep learning models like CNNs for complex pattern detection (e.g., atrial fibrillation).
 
-By practicing these techniques on datasets like MIT-BIH or PTB-XL, you’ll gain hands-on experience for the PhD. Start with the provided code, experiment with real ECG data, and explore how these features improve model performance in detecting heart conditions. If you hit roadblocks, keep tweaking parameters or ask for help—you’re learning a powerful skillset!
+By practicing these techniques on datasets like MIT-BIH or PTB-XL, you’ll gain hands-on experience for the PhD. Start with the provided code, experiment with real ECG data, and explore how these features improve model performance in detecting heart conditions. If we hit roadblocks, keep tweaking parameters or ask for help—you’re learning a powerful skillset!
