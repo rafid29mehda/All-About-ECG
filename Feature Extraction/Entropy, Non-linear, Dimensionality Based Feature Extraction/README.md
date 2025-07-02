@@ -93,7 +93,7 @@ sampen = nolds.sampen(ecg_signal, emb_dim=2, tolerance=0.2 * np.std(ecg_signal))
 print("Sample Entropy:", sampen)
 ```
 
-**Explanation**: The code computes SampEn, which is similar to ApEn but more robust. Adjust `tolerance` for your signal.
+**Explanation**: The code computes SampEn, which is similar to ApEn but more robust. Adjust `tolerance` for the signal.
 
 ---
 
@@ -1639,7 +1639,7 @@ Here’s a quick recap of all the extraction techniques covered for the listed f
    - For entropy features (e.g., ApEn, SampEn), experiment with `emb_dim` (2–3) and `tolerance` (0.1–0.25 * std).
    - For nonlinear features like Lyapunov exponents, use longer signals (5–10 minutes) for accuracy.
    - For dimensionality reduction, try different `n_components` (e.g., 2–5).
-   - For feature selection, adjust the number of selected features based on your model’s needs.
+   - For feature selection, adjust the number of selected features based on the model’s needs.
 
 6. **Combine Features**:
    - Use a mix of entropy, nonlinear, and other features (e.g., morphological, time-frequency) for robust ECG analysis.
@@ -1651,11 +1651,11 @@ Here’s a quick recap of all the extraction techniques covered for the listed f
 
 ---
 
-## How to Use These in Your PhD Research
+## How to Use These in the PhD Research
 
-For your PhD in Biomedical Signal Processing:
+For the PhD in Biomedical Signal Processing:
 - **Experiment with Features**: Test which entropy or nonlinear features best detect specific conditions (e.g., atrial fibrillation, ventricular tachycardia).
 - **Optimize Dimensionality Reduction**: Use PCA or t-SNE to visualize high-dimensional ECG data, helping identify patterns in heart conditions.
 - **Select Features Wisely**: Apply feature selection to reduce computational load and improve model accuracy for real-time ECG analysis.
 - **Validate with Real Data**: Use labeled datasets (e.g., MIT-BIH, PTB Diagnostic ECG Database) to validate feature effectiveness.
-- **Document Results**: Compare feature performance (e.g., classification accuracy) in your thesis to show their impact.
+- **Document Results**: Compare feature performance (e.g., classification accuracy) in the thesis to show their impact.
