@@ -7,6 +7,9 @@ Imagine an ECG (electrocardiogram) as a story written by your heart. It’s a wi
 1. **Time-Domain Features**: These focus on the timing and shape of the ECG signal in the time dimension (like how long a heartbeat takes or how tall a wave is).
 2. **Frequency-Domain Features**: These look at the “vibrations” or frequencies in the ECG signal (like how fast or slow the signal oscillates).
 3. **Time-Frequency Domain Features**: These combine time and frequency to see how the signal’s frequencies change over time.
+4. **Morphological Features**: These describe the **shape** of the ECG waves, like how tall or wide they are.
+5. **Statistical Features**: These are like summarizing the ECG signal with numbers, such as its average or how spread out it is.
+6. **Wavelet-Based Features**: These use a special math tool called wavelets to break the ECG into different “zooms” to find hidden patterns.
 
 Let’s break each one down with explanations and examples, so you can understand them step by step.
 
@@ -337,3 +340,345 @@ In a PhD project, you might:
 - **Use Libraries**: Neurokit2, Biosppy, and SciPy are great for beginners. They handle complex math for you.
 - **Visualize Everything**: Plot your signals, peaks, and spectrograms to understand what’s happening.
 - **Start Small**: Begin with time-domain features (they’re the easiest), then move to frequency and time-frequency features as you get comfortable.
+- 
+
+
+
+## 6.4 Morphological Features (e.g., QRS Amplitude, T-Wave Shape)
+
+### What Are Morphological Features?
+
+Morphological features are all about the **shape** and **size** of the ECG signal’s waves. Imagine the ECG as a roller coaster track with ups and downs. The shapes of these ups and downs (like the tall spike of the QRS complex or the gentle curve of the T wave) give us clues about how the heart is working. Morphological features measure things like the height, width, or overall shape of these waves.
+
+The ECG has key parts:
+- **P Wave**: A small bump before the big spike, showing the atria (upper heart chambers) contracting.
+- **QRS Complex**: A big dip (Q), a tall peak (R), and another dip (S), showing the ventricles (lower chambers) contracting.
+- **T Wave**: A wave after the QRS, showing the ventricles relaxing.
+
+Morphological features focus on how these waves look, which can change in heart conditions like myocardial infarction (heart attack) or arrhythmias.
+
+### Key Morphological Features
+
+Here’s a list of important morphological features in ECG analysis:
+1. **QRS Amplitude**: The height of the QRS complex (usually the R peak), showing the strength of ventricular contraction.
+2. **T-Wave Shape**: The shape of the T wave (e.g., peaked, flat, inverted), indicating ventricular repolarization issues.
+3. **P Wave Amplitude**: The height of the P wave, showing atrial contraction strength.
+4. **QRS Width**: The duration of the QRS complex, indicating how long ventricular contraction takes.
+5. **T-Wave Amplitude**: The height of the T wave, showing repolarization strength.
+6. **ST Segment Slope**: The angle or slope of the line between the S wave and T wave, indicating ischemia or injury.
+7. **P Wave Shape**: The shape of the P wave (e.g., notched, broad), which can show atrial abnormalities.
+8. **Q Wave Depth**: The depth of the Q wave, which can indicate past heart attacks.
+9. **T-Wave Asymmetry**: How symmetric the T wave is, which can signal repolarization issues.
+10. **QRS Morphology Variability**: How much the QRS shape varies between beats, indicating irregular heart activity.
+
+### Why Are These Important?
+
+Morphological features are like the heart’s fingerprint. For example:
+- A tall QRS amplitude might mean a healthy ventricle, but an abnormally high or low amplitude could suggest hypertrophy or infarction.
+- An inverted T wave might indicate ischemia (reduced blood flow to the heart).
+- A wide QRS complex could point to a bundle branch block, where the electrical signal is delayed.
+
+These features are critical in traditional ECG analysis by doctors and are also used in machine learning to automatically detect heart conditions.
+
+### End-to-End Example: Extracting QRS Amplitude and T-Wave Shape
+
+Let’s extract **QRS Amplitude** (height of the R peak) and **T-Wave Shape** (checking if the T wave is peaked, flat, or inverted) using Python and the `neurokit2` library. We’ll use a simulated ECG signal for simplicity, but you can replace it with real data from Physionet.
+
+#### Step 1: Install Required Tools
+Install the libraries:
+```bash
+pip install neurokit2 numpy matplotlib
+```
+
+#### Step 2: Python Code to Extract QRS Amplitude and T-Wave Shape
+
+```python
+import neurokit2 as nk
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Simulated ECG signal (2 seconds, 360 Hz)
+sampling_rate = 360
+time = np.arange(0, 2, 1/sampling_rate)
+ecg_signal = np.sin(2 * np.pi * 2 * time) + 0.5 * np.random.randn(len(time))  # Fake ECG with noise
+
+# Clean and process ECG
+ecg_cleaned = nk.ecg_clean(ecg_signal, sampling_rate=sampling_rate)
+signals, info = nk.ecg_process(ecg_cleaned, sampling_rate=sampling_rate)
+
+# Extract QRS amplitude (R peak amplitude)
+r_peaks = info['ECG_R_Peaks']
+qrs_amplitudes = ecg_cleaned[r_peaks]
+print("QRS Amplitudes (mV):", qrs_amplitudes)
+
+# Extract T-wave shape (basic analysis: positive, negative, or flat)
+t_peaks = info['ECG_T_Peaks']
+t_amplitudes = ecg_cleaned[t_peaks]
+t_shapes = []
+for amp in t_amplitudes:
+    if abs(amp) < 0.1:  # Threshold for "flat"
+        t_shapes.append("Flat")
+    elif amp > 0:
+        t_shapes.append("Positive (Peaked)")
+    else:
+        t_shapes.append("Negative (Inverted)")
+print("T-Wave Shapes:", t_shapes)
+
+# Plot ECG with R and T peaks
+plt.plot(ecg_cleaned, label="ECG Signal")
+plt.plot(r_peaks, ecg_cleaned[r_peaks], "ro", label="R Peaks")
+plt.plot(t_peaks, ecg_cleaned[t_peaks], "go", label="T Peaks")
+plt.legend()
+plt.title("ECG Signal with QRS and T Peaks")
+plt.xlabel("Sample")
+plt.ylabel("Amplitude (mV)")
+plt.show()
+```
+
+#### Explanation of the Code
+1. **Simulated ECG**: We create a fake ECG signal (a sine wave with noise) at 360 Hz. In real research, use data from MIT-BIH or PTB-XL.
+2. **Clean Signal**: `nk.ecg_clean` removes noise to improve peak detection.
+3. **Process ECG**: `nk.ecg_process` detects R peaks and T peaks automatically.
+4. **QRS Amplitude**: We extract the signal amplitude at R peaks (the tallest part of the QRS complex).
+5. **T-Wave Shape**: We check the T peak amplitude to classify the T wave as:
+   - **Flat**: Amplitude close to zero (e.g., <0.1 mV).
+   - **Positive (Peaked)**: Positive amplitude, indicating a normal or peaked T wave.
+   - **Negative (Inverted)**: Negative amplitude, possibly indicating ischemia.
+6. **Visualize**: We plot the ECG with red dots for R peaks and green dots for T peaks to see the results.
+
+#### What You’ll See
+When you run this code:
+- It prints the QRS amplitudes (in millivolts) for each R peak.
+- It classifies the T-wave shape for each T peak (e.g., “Positive (Peaked)” or “Negative (Inverted)”).
+- It shows a plot of the ECG signal with marked R and T peaks.
+
+**Practical Note**: T-wave shape analysis is simplified here. In research, you might analyze the full T-wave morphology (e.g., area under the curve or symmetry) using more advanced methods.
+
+---
+
+## 6.5 Statistical Features (e.g., Mean, Variance, Skewness)
+
+### What Are Statistical Features?
+
+Statistical features are like summarizing the ECG signal with numbers that describe its overall behavior. Imagine you’re describing a class of students by their average height, how much their heights vary, or whether most students are taller or shorter than average. For an ECG signal, statistical features give us a “big picture” of the signal’s values, like its average amplitude or how spread out the values are.
+
+These features are calculated over a segment of the ECG signal (e.g., one heartbeat or a 10-second window) and help us understand patterns that might indicate heart conditions.
+
+### Key Statistical Features
+
+Here’s a list of important statistical features for ECG analysis:
+1. **Mean**: The average amplitude of the ECG signal, showing its central tendency.
+2. **Variance**: How much the signal’s amplitude varies, indicating signal spread.
+3. **Skewness**: Measures whether the signal’s values are skewed (lopsided) to one side, indicating asymmetry.
+4. **Kurtosis**: Measures how “peaked” or “flat” the signal’s distribution is, showing outliers.
+5. **Standard Deviation**: The square root of variance, showing typical deviation from the mean.
+6. **Median**: The middle value of the signal, less sensitive to outliers than the mean.
+7. **Range**: The difference between the maximum and minimum signal values.
+8. **Interquartile Range (IQR)**: The range between the 25th and 75th percentiles, showing the middle 50% of values.
+9. **Root Mean Square (RMS)**: The square root of the mean of squared values, indicating signal energy.
+10. **Coefficient of Variation**: The standard deviation divided by the mean, showing relative variability.
+
+### Why Are These Important?
+
+Statistical features give a quick summary of the ECG signal’s behavior. For example:
+- A high variance might indicate irregular heartbeats (e.g., arrhythmias).
+- Positive skewness could mean more high-amplitude peaks (e.g., tall R waves).
+- High kurtosis might suggest sharp, extreme peaks in the signal, which could indicate abnormalities.
+
+These features are simple to compute and are often used in machine learning models to classify heart conditions or detect anomalies.
+
+### End-to-End Example: Extracting Mean, Variance, and Skewness
+
+Let’s extract **Mean**, **Variance**, and **Skewness** from an ECG signal using Python and the `numpy` and `scipy` libraries. We’ll work with a simulated ECG signal, but you can use real data later.
+
+#### Step 1: Install Required Tools
+Install the libraries:
+```bash
+pip install numpy scipy matplotlib
+```
+
+#### Step 2: Python Code to Extract Statistical Features
+
+```python
+import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plt
+
+# Simulated ECG signal (2 seconds, 360 Hz)
+sampling_rate = 360
+time = np.arange(0, 2, 1/sampling_rate)
+ecg_signal = np.sin(2 * np.pi * 2 * time) + 0.5 * np.random.randn(len(time))  # Fake ECG with noise
+
+# Calculate statistical features
+mean = np.mean(ecg_signal)
+variance = np.var(ecg_signal)
+skewness = stats.skew(ecg_signal)
+
+print("Mean (mV):", mean)
+print("Variance (mV²):", variance)
+print("Skewness:", skewness)
+
+# Plot ECG signal
+plt.plot(time, ecg_signal, label="ECG Signal")
+plt.axhline(mean, color='r', linestyle='--', label=f"Mean = {mean:.2f} mV")
+plt.title("ECG Signal with Mean")
+plt.xlabel("Time (s)")
+plt.ylabel("Amplitude (mV)")
+plt.legend()
+plt.show()
+```
+
+#### Explanation of the Code
+1. **Simulated ECG**: We create a fake ECG signal (a sine wave with noise) at 360 Hz.
+2. **Mean**: `np.mean` calculates the average amplitude of the signal.
+3. **Variance**: `np.var` measures how much the signal’s values spread out from the mean.
+4. **Skewness**: `stats.skew` checks if the signal’s values are lopsided (e.g., more high or low values).
+5. **Visualize**: We plot the ECG signal with a red dashed line showing the mean to help you see the central tendency.
+
+#### What You’ll See
+When you run this code:
+- It prints the mean (average amplitude), variance (spread), and skewness (asymmetry) of the ECG signal.
+- It shows a plot of the ECG signal with the mean marked as a horizontal line.
+
+**Practical Note**: Statistical features are often calculated over specific segments (e.g., per heartbeat). You can segment the ECG using R-peak detection (as shown in the morphological features example) and compute these features for each segment.
+
+---
+
+## 6.6 Wavelet-Based Feature Extraction
+
+### What Are Wavelet-Based Features?
+
+Wavelet-based features are like using a magnifying glass that can zoom in and out on the ECG signal to find patterns at different scales. Unlike regular features that look at time or frequency alone, wavelets combine both, letting us see how the signal’s “vibrations” change over time. This is perfect for ECGs because heart signals are **non-stationary**—their patterns change, especially in conditions like arrhythmias.
+
+A **wavelet** is a small wave-like function that we slide over the ECG signal. By stretching or shrinking the wavelet (changing its scale), we can focus on fast changes (like QRS spikes) or slow changes (like T waves). Wavelet-based features extract information from these different scales, giving us a detailed picture of the signal.
+
+### Key Wavelet-Based Features
+
+Here’s a list of important wavelet-based features for ECG analysis:
+1. **Wavelet Coefficients**: The raw values from the wavelet transform, showing signal details at different scales.
+2. **Wavelet Energy**: The energy (squared magnitude) of wavelet coefficients at specific scales, indicating signal strength.
+3. **Wavelet Entropy**: Measures the randomness or complexity of wavelet coefficients, showing signal irregularity.
+4. **Detail Coefficients (High-Frequency)**: Coefficients capturing fast changes (e.g., QRS complex).
+5. **Approximation Coefficients (Low-Frequency)**: Coefficients capturing slow changes (e.g., P or T waves).
+6. **Wavelet Power Spectrum**: The distribution of energy across wavelet scales, similar to PSD.
+7. **Scale-Specific Energy Ratio**: The proportion of energy in specific scales, highlighting dominant frequencies.
+8. **Wavelet Variance**: The variance of wavelet coefficients, indicating variability at different scales.
+9. **Wavelet Skewness**: The skewness of wavelet coefficients, showing asymmetry at different scales.
+10. **Wavelet Kurtosis**: The kurtosis of wavelet coefficients, indicating peakedness or outliers at different scales.
+
+### Why Are These Important?
+
+Wavelet-based features are powerful because they capture both time and frequency information, making them ideal for analyzing complex ECG signals. For example:
+- **Wavelet Energy** can highlight strong QRS complexes or weak T waves.
+- **Wavelet Entropy** can detect irregular patterns in arrhythmias like atrial fibrillation.
+- **Detail Coefficients** are great for spotting sharp changes, like premature ventricular contractions (PVCs).
+
+These features are often used in deep learning models or as inputs to machine learning algorithms for advanced ECG analysis.
+
+### End-to-End Example: Extracting Wavelet Coefficients and Wavelet Energy
+
+Let’s extract **Wavelet Coefficients** and **Wavelet Energy** using the Continuous Wavelet Transform (CWT) with the Morlet wavelet. We’ll use Python and the `pywt` library, which is beginner-friendly for wavelet analysis.
+
+#### Step 1: Install Required Tools
+Install the libraries:
+```bash
+pip install pywt numpy matplotlib
+```
+
+#### Step 2: Python Code to Extract Wavelet-Based Features
+
+```python
+import numpy as np
+import pywt
+import matplotlib.pyplot as plt
+
+# Simulated ECG signal (2 seconds, 360 Hz)
+sampling_rate = 360
+time = np.arange(0, 2, 1/sampling_rate)
+ecg_signal = np.sin(2 * np.pi * 2 * time) + 0.5 * np.sin(2 * np.pi * 5 * time) + 0.3 * np.random.randn(len(time))
+
+# Compute Continuous Wavelet Transform (CWT)
+scales = np.arange(1, 64)  # Smaller range for simplicity
+cwt_matrix, frequencies = pywt.cwt(ecg_signal, scales, 'morl', sampling_period=1/sampling_rate)
+
+# Extract wavelet coefficients (raw CWT matrix)
+print("Wavelet Coefficients Shape (scales, times):", cwt_matrix.shape)
+
+# Calculate wavelet energy per scale
+wavelet_energy = np.sum(np.abs(cwt_matrix)**2, axis=1)
+print("Wavelet Energy per Scale:", wavelet_energy)
+
+# Plot scalogram (squared magnitude of CWT)
+plt.figure(figsize=(10, 6))
+plt.imshow(np.abs(cwt_matrix), extent=[time[0], time[-1], scales[-1], scales[0]], 
+           cmap='jet', aspect='auto', interpolation='bilinear')
+plt.colorbar(label="Amplitude")
+plt.title("Scalogram of ECG Signal (CWT)")
+plt.xlabel("Time (s)")
+plt.ylabel("Scale")
+plt.show()
+```
+
+#### Explanation of the Code
+1. **Simulated ECG**: We create a fake ECG signal with two frequencies (2 Hz and 5 Hz) plus noise to mimic a real signal.
+2. **CWT**: `pywt.cwt` computes the Continuous Wavelet Transform using the Morlet wavelet (`'morl'`), producing a matrix where rows are scales (related to frequencies) and columns are time points.
+3. **Wavelet Coefficients**: The `cwt_matrix` contains the raw coefficients, which describe the signal at different scales and times.
+4. **Wavelet Energy**: We sum the squared magnitudes of the coefficients along the time axis for each scale to get the energy per scale.
+5. **Visualize**: We plot the scalogram (squared magnitude of CWT) as a heatmap, where brighter colors show stronger wavelet coefficients at specific times and scales.
+
+#### What You’ll See
+When you run this code:
+- It prints the shape of the wavelet coefficient matrix (e.g., 63 scales × 720 time points).
+- It prints the wavelet energy for each scale, showing how much signal energy is at different “zooms.”
+- It shows a scalogram, where the x-axis is time, the y-axis is scale (inversely related to frequency), and the color shows amplitude.
+
+**Practical Note**: The Morlet wavelet is good for ECGs because it balances time and frequency resolution. You can experiment with other wavelets (e.g., Daubechies, Mexican Hat) depending on your research needs.
+
+---
+
+### Putting It All Together
+
+Let’s summarize how these features fit into ECG analysis and your PhD journey:
+
+1. **Morphological Features** (e.g., QRS Amplitude, T-Wave Shape):
+   - Focus on the shape and size of ECG waves.
+   - Easy to compute using peak detection (e.g., with `neurokit2`).
+   - Useful for detecting specific heart conditions like ischemia (inverted T waves) or hypertrophy (high QRS amplitude).
+   - Example Use: Train a machine learning model to classify heartbeats based on QRS amplitude.
+
+2. **Statistical Features** (e.g., Mean, Variance, Skewness):
+   - Summarize the ECG signal’s overall behavior.
+   - Simple to calculate with `numpy` and `scipy`.
+   - Great for capturing general patterns or variability, like in arrhythmias.
+   - Example Use: Use variance to detect irregular heartbeats in a Random Forest model.
+
+3. **Wavelet-Based Features** (e.g., Wavelet Coefficients, Wavelet Energy):
+   - Capture both time and frequency information, ideal for non-stationary ECG signals.
+   - Require wavelet transforms (e.g., `pywt.cwt`).
+   - Powerful for detecting complex patterns, like sudden changes in arrhythmias.
+   - Example Use: Feed scalograms into a Convolutional Neural Network (CNN) to classify atrial fibrillation.
+
+### Tips for Learning and Applying These Features
+
+1. **Start Simple**: Begin with morphological and statistical features—they’re easier to understand and compute. Use `neurokit2` for automated peak detection.
+2. **Practice with Real Data**: Download ECG datasets from Physionet (e.g., MIT-BIH Arrhythmia Database) to test these techniques on real signals.
+3. **Visualize Everything**: Plot your ECG signals, peaks, and scalograms to see what the features represent. Visualization helps you spot errors.
+4. **Combine Features**: For machine learning, combine morphological (e.g., QRS amplitude), statistical (e.g., variance), and wavelet-based (e.g., wavelet energy) features to improve model accuracy.
+5. **Handle Noise**: ECG signals often have noise (e.g., muscle artifacts). Clean the signal with filters (e.g., bandpass) before extracting features.
+6. **Learn Libraries**: Master `neurokit2` for morphological features, `numpy` and `scipy` for statistical features, and `pywt` for wavelet features.
+7. **Experiment with Scales**: For wavelet features, try different scales or wavelets to see which capture the ECG patterns best.
+8. **Think About Your PhD**: These features are building blocks for your research. For example, you could use wavelet energy to detect premature ventricular contractions or statistical features to analyze heart rate variability.
+
+### Next Steps
+
+To build on this:
+- **Try Real ECG Data**: Use datasets like MIT-BIH or PTB-XL from Physionet. Load them with the `wfdb` library (e.g., `pip install wfdb`).
+- **Segment the Signal**: Extract features for individual heartbeats by detecting R peaks and analyzing windows around them.
+- **Feed Features to Models**: Use these features in machine learning (e.g., scikit-learn) or deep learning (e.g., TensorFlow) to classify heart conditions.
+- **Explore Advanced Wavelets**: Try Discrete Wavelet Transform (DWT) with `pywt` for faster computation or other wavelets like Daubechies for different patterns.
+
+
+
+
+
+
