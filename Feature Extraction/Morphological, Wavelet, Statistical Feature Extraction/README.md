@@ -278,7 +278,7 @@ for i in range(min(len(p_onsets), len(p_offsets))):
 print("P Wave Shapes:", p_shapes)
 ```
 
-**Explanation**: The code isolates the P wave and checks for multiple peaks to detect notching. Adjust the height threshold based on your signal.
+**Explanation**: The code isolates the P wave and checks for multiple peaks to detect notching. Adjust the height threshold based on the signal.
 
 ---
 
@@ -1050,6 +1050,6 @@ print("Wavelet Kurtosis per Scale:", wavelet_kurtosis)
 5. **Visualize Results**: Plot ECG signals, peaks, or scalograms to verify feature extraction.
 6. **Combine Features**: Use these features together in machine learning models (e.g., Random Forest, CNN) for better classification of heart conditions.
 7. **Handle Noise**: Noise can distort morphological and wavelet features. Use `neurokit2` or `scipy` filters to preprocess.
-8. **Optimize for Research**: For your PhD, test these features on specific conditions (e.g., arrhythmias) and evaluate their impact on model performance.
+8. **Optimize for Research**: For the PhD, test these features on specific conditions (e.g., arrhythmias) and evaluate their impact on model performance.
 
-These techniques provide a solid foundation for extracting ECG features, enabling you to analyze heart signals effectively in your Biomedical Signal Processing research. Practice with these codes, try real datasets, and explore how these features enhance your machine learning models!
+These techniques provide a solid foundation for extracting ECG features, enabling you to analyze heart signals effectively in the Biomedical Signal Processing research. Practice with these codes, try real datasets, and explore how these features enhance the machine learning models!
