@@ -34,7 +34,7 @@ Time-domain features measure things like the time between these waves, their hei
 
 ### Key Time-Domain Features
 
-Here’s a detailed list of time-domain features you’ll often encounter in ECG analysis:
+Here’s a detailed list of time-domain features we’ll often encounter in ECG analysis:
 
 1. **RR Interval**: The time between two consecutive R peaks (the tallest spike in the QRS complex). It tells us the heart rate. A shorter RR interval means a faster heart rate, and a longer one means a slower heart rate.
 2. **PR Interval**: The time from the start of the P wave to the start of the QRS complex. It shows how long it takes for the electrical signal to travel from the atria to the ventricles.
