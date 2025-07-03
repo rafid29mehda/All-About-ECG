@@ -227,7 +227,7 @@ print("LF/HF Ratio:", lf_power / hf_power)
 4. **LF and HF Power**: We integrate (sum) the PSD over the low-frequency (0.04–0.15 Hz) and high-frequency (0.15–0.4 Hz) bands using `np.trapz` to calculate their power.
 5. **LF/HF Ratio**: We compute the ratio to assess the balance between sympathetic and parasympathetic activity.
 
-#### What You’ll See
+#### What We’ll See
 When we run this code, it will:
 - Show a graph of the PSD, with peaks indicating dominant frequencies in the ECG.
 - Print the LF power, HF power, and LF/HF ratio, which are useful for HRV analysis.
