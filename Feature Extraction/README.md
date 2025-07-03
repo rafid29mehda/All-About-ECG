@@ -126,7 +126,7 @@ plt.show()
 6. **Calculate PR Intervals**: We find the time from each P-peak to the corresponding R-peak.
 7. **Visualize**: We plot the ECG with marked R and P peaks to see where they are.
 
-#### What You’ll See
+#### What We’ll See
 When we run this code, it will:
 - Print the RR intervals (e.g., time between heartbeats in seconds).
 - Print the PR intervals (e.g., time from atrial to ventricular activation).
