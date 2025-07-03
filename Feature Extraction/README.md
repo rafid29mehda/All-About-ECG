@@ -232,7 +232,7 @@ When we run this code, it will:
 - Show a graph of the PSD, with peaks indicating dominant frequencies in the ECG.
 - Print the LF power, HF power, and LF/HF ratio, which are useful for HRV analysis.
 
-In a real project, you’d use these features to train a machine learning model to detect stress or arrhythmias based on frequency patterns.
+In a real project, we’d use these features to train a machine learning model to detect stress or arrhythmias based on frequency patterns.
 
 ---
 
