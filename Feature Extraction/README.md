@@ -132,7 +132,7 @@ When we run this code, it will:
 - Print the PR intervals (e.g., time from atrial to ventricular activation).
 - Show a graph of the ECG signal with red dots for R-peaks and green dots for P-peaks.
 
-This is a simple way to extract time-domain features. In a real project, you’d use these features to train a machine learning model to classify heartbeats (e.g., normal vs. abnormal).
+This is a simple way to extract time-domain features. In a real project, we’d use these features to train a machine learning model to classify heartbeats (e.g., normal vs. abnormal).
 
 ---
 
