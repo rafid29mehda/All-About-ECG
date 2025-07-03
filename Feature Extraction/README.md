@@ -629,7 +629,7 @@ plt.show()
 4. **Wavelet Energy**: We sum the squared magnitudes of the coefficients along the time axis for each scale to get the energy per scale.
 5. **Visualize**: We plot the scalogram (squared magnitude of CWT) as a heatmap, where brighter colors show stronger wavelet coefficients at specific times and scales.
 
-#### What You’ll See
+#### What We’ll See
 When we run this code:
 - It prints the shape of the wavelet coefficient matrix (e.g., 63 scales × 720 time points).
 - It prints the wavelet energy for each scale, showing how much signal energy is at different “zooms.”
