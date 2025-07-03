@@ -316,7 +316,7 @@ print("Total Energy in 0–10 Hz Band:", band_energy)
 3. **Spectrogram**: We plot the magnitude of the STFT (`np.abs(Zxx)`) as a heatmap, where the x-axis is time, the y-axis is frequency, and the color shows amplitude.
 4. **Band Energy**: We calculate the total energy in the 0–10 Hz band by summing the squared magnitudes of the STFT in that frequency range.
 
-#### What You’ll See
+#### What We’ll See
 When we run this code, it will:
 - Show a spectrogram, where brighter colors indicate stronger frequencies at specific times.
 - Print the total energy in the 0–10 Hz band, which could be used as a feature for machine learning.
