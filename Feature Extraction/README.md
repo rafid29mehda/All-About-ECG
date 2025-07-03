@@ -119,7 +119,7 @@ plt.show()
 
 #### Explanation of the Code
 1. **Import Libraries**: We use `neurokit2` for ECG processing, `numpy` for calculations, and `matplotlib` for plotting.
-2. **Simulated ECG**: Since we’re keeping it simple, we create a fake ECG signal (a sine wave with noise). In a real project, you’d load data from a database like MIT-BIH.
+2. **Simulated ECG**: Since we’re keeping it simple, we create a fake ECG signal (a sine wave with noise). In a real project, we’d load data from a database like MIT-BIH.
 3. **Clean the Signal**: `nk.ecg_clean` removes noise to make peak detection easier.
 4. **Find Peaks**: `nk.ecg_process` detects R-peaks (the tallest spikes) and P-peaks (smaller bumps before QRS).
 5. **Calculate RR Intervals**: We compute the time between consecutive R-peaks by taking the difference (`np.diff`) and dividing by the sampling rate to get seconds.
