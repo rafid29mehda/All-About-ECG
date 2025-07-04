@@ -327,7 +327,7 @@ In a real project, we might feed the spectrogram into a CNN to classify heart co
 
 ### Putting It All Together
 
-Now that you’ve learned about **time-domain**, **frequency-domain**, and **time-frequency domain features**, here’s how they fit into ECG research:
+Now that we’ve learned about **time-domain**, **frequency-domain**, and **time-frequency domain features**, here’s how they fit into ECG research:
 
 1. **Time-Domain Features** (like RR and PR intervals) are simple and directly relate to the heart’s electrical activity. They’re great for traditional analysis and basic machine learning models.
 2. **Frequency-Domain Features** (like PSD) reveal the hidden “vibrations” in the ECG, useful for HRV analysis and detecting rhythmic patterns.
