@@ -340,7 +340,7 @@ In a PhD project, we might:
 
 ### Tips for Learning More
 - **Practice with Real Data**: Download ECG data from Physionet (e.g., MIT-BIH Arrhythmia Database) and try extracting these features.
-- **Use Libraries**: Neurokit2, Biosppy, and SciPy are great for beginners. They handle complex math for you.
+- **Use Libraries**: Neurokit2, Biosppy, and SciPy are great for beginners. They handle complex math for us.
 - **Visualize Everything**: Plot the signals, peaks, and spectrograms to understand what’s happening.
 - **Start Small**: Begin with time-domain features (they’re the easiest), then move to frequency and time-frequency features as we get comfortable.
 - 
