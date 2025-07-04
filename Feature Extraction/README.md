@@ -449,7 +449,7 @@ plt.show()
    - **Negative (Inverted)**: Negative amplitude, possibly indicating ischemia.
 6. **Visualize**: We plot the ECG with red dots for R peaks and green dots for T peaks to see the results.
 
-#### What You’ll See
+#### What We’ll See
 When we run this code:
 - It prints the QRS amplitudes (in millivolts) for each R peak.
 - It classifies the T-wave shape for each T peak (e.g., “Positive (Peaked)” or “Negative (Inverted)”).
