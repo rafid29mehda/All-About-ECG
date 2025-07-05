@@ -463,7 +463,7 @@ When we run this code:
 
 ### What Are Statistical Features?
 
-Statistical features are like summarizing the ECG signal with numbers that describe its overall behavior. Imagine you’re describing a class of students by their average height, how much their heights vary, or whether most students are taller or shorter than average. For an ECG signal, statistical features give us a “big picture” of the signal’s values, like its average amplitude or how spread out the values are.
+Statistical features are like summarizing the ECG signal with numbers that describe its overall behavior. Imagine we’re describing a class of students by their average height, how much their heights vary, or whether most students are taller or shorter than average. For an ECG signal, statistical features give us a “big picture” of the signal’s values, like its average amplitude or how spread out the values are.
 
 These features are calculated over a segment of the ECG signal (e.g., one heartbeat or a 10-second window) and help us understand patterns that might indicate heart conditions.
 
