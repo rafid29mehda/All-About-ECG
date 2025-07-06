@@ -538,7 +538,7 @@ plt.show()
 4. **Skewness**: `stats.skew` checks if the signal’s values are lopsided (e.g., more high or low values).
 5. **Visualize**: We plot the ECG signal with a red dashed line showing the mean to help we see the central tendency.
 
-#### What You’ll See
+#### What We’ll See
 When we run this code:
 - It prints the mean (average amplitude), variance (spread), and skewness (asymmetry) of the ECG signal.
 - It shows a plot of the ECG signal with the mean marked as a horizontal line.
