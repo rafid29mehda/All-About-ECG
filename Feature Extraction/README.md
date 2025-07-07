@@ -764,7 +764,7 @@ plt.show()
    - Parameters: `emb_dim=2` (pattern length) and `tolerance=0.2*std` (similarity threshold).
 4. **Visualize**: Plot the ECG signal to see what we’re analyzing.
 
-#### What You’ll See
+#### What We’ll See
 When we run this code:
 - It prints the **Shannon Entropy** (e.g., in bits), showing how unpredictable the signal’s amplitude is.
 - It prints the **Sample Entropy**, showing the signal’s regularity.
