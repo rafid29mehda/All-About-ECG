@@ -1057,7 +1057,7 @@ print("Chirplet Transform Approximation Shape (scales, times):", cwt_matrix.shap
 
 ---
 
-### Practical Tips for ECG Feature Extraction
+### Tips for ECG Feature Extraction
 
 1. **Start with Time-Domain Features**: They’re the easiest to compute and understand. Use `neurokit2` to automate peak detection.
 2. **Clean the Signal**: Noise (e.g., baseline wander, muscle artifacts) can ruin feature extraction. Apply filters (e.g., bandpass) before processing.
