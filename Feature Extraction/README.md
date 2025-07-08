@@ -973,7 +973,7 @@ plt.show()
    - `random_state=42` ensures reproducible results.
 5. **Visualize**: Plot the reduced features in 2D scatter plots for PCA and t-SNE.
 
-#### What You’ll See
+#### What We’ll See
 When we run this code:
 - It prints the shape of the reduced features and PCA’s explained variance ratio.
 - It shows two scatter plots: one for PCA (showing main directions of variation) and one for t-SNE (showing clustered patterns).
