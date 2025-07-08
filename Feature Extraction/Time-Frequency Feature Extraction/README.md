@@ -1,6 +1,6 @@
 ## 6.1 Time-Domain Features: Extraction Techniques
 
-Time-domain features are measurements taken directly from the ECG signal in the time dimension, focusing on timing, amplitude, or shape of the signal’s components (e.g., P wave, QRS complex, T wave). Below, I’ll describe the extraction techniques for each of the 10 time-domain features listed previously: **RR Interval**, **PR Interval**, **QRS Duration**, **QT Interval**, **P Wave Duration**, **T Wave Duration**, **P Wave Amplitude**, **R Wave Amplitude**, **Heart Rate Variability (HRV)**, and **ST Segment Elevation/Depression**.
+Time-domain features are measurements taken directly from the ECG signal in the time dimension, focusing on timing, amplitude, or shape of the signal’s components (e.g., P wave, QRS complex, T wave). Below, the extraction techniques for each of the 10 time-domain features listed previously: **RR Interval**, **PR Interval**, **QRS Duration**, **QT Interval**, **P Wave Duration**, **T Wave Duration**, **P Wave Amplitude**, **R Wave Amplitude**, **Heart Rate Variability (HRV)**, and **ST Segment Elevation/Depression**.
 
 ### 1. RR Interval
 **Description**: The time between consecutive R peaks (the tallest peak in the QRS complex), used to calculate heart rate.
