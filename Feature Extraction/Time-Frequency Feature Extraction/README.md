@@ -1075,4 +1075,3 @@ These feature extraction techniques are building blocks for the research in Biom
 - Use **frequency-domain features** (e.g., LF/HF ratio) for heart rate variability analysis, useful for stress or autonomic studies.
 - Use **time-frequency features** (e.g., spectrograms, scalograms) as inputs to deep learning models like CNNs for complex pattern detection (e.g., atrial fibrillation).
 
-By practicing these techniques on datasets like MIT-BIH or PTB-XL, you’ll gain hands-on experience for the PhD. Start with the provided code, experiment with real ECG data, and explore how these features improve model performance in detecting heart conditions. If we hit roadblocks, keep tweaking parameters or ask for help—you’re learning a powerful skillset!
