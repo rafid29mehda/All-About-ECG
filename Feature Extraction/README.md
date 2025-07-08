@@ -1112,7 +1112,7 @@ Let’s summarize how these features and methods fit into ECG analysis and the P
    - Use `scikit-learn` for feature selection.
    - Example Use: Select top features for a machine learning model to predict myocardial infarction.
 
-### Tips for Learning and Applying These Features
+### Tips
 
 1. **Start Simple**: Begin with entropy-based features (e.g., Shannon Entropy) and filter methods (e.g., Mutual Information) since they’re easier to compute.
 2. **Use Real Data**: Download ECG datasets from Physionet (e.g., MIT-BIH Arrhythmia Database) using `wfdb`:
