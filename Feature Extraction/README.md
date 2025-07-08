@@ -1078,7 +1078,7 @@ plt.show()
    - Higher values indicate more important features.
 5. **Visualize**: Plot the Random Forest importances as a bar chart.
 
-#### What You’ll See
+#### What We’ll See
 When we run this code:
 - It prints **Mutual Information Scores** for each feature.
 - It prints **Random Forest Importances** for each feature.
