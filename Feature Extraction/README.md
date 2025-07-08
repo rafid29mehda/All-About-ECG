@@ -861,7 +861,7 @@ plt.show()
    - Use `nk.hrv_nonlinear` to calculate SD1 (short-term variability) and SD2 (long-term variability) from the Poincaré plot.
 4. **Visualize**: Plot the Poincaré plot, where each point shows an RR interval versus the next one.
 
-#### What You’ll See
+#### What We’ll See
 When we run this code:
 - It prints the **Largest Lyapunov Exponent**, indicating the signal’s chaotic behavior.
 - It prints **SD1** and **SD2** from the Poincaré plot, showing heart rate variability.
