@@ -288,7 +288,7 @@ Let’s imagine you’re a PhD student analyzing an ECG from the MIT-BIH Arrhyth
 ### What is P Wave Identification?
 The **P wave** is the small, rounded bump in an ECG before the QRS complex, representing the atria contracting to push blood into the ventricles. Identifying P waves is like spotting the soft “intro” notes before the loud “beat” (QRS) in the heart’s rhythm.
 
-### Why It Matters
+### Why Matters
 - P waves indicate atrial activity, essential for diagnosing atrial arrhythmias (e.g., atrial fibrillation, where P waves may be absent or irregular).
 - Their shape, size, and timing help assess atrial health (e.g., enlarged atria).
 - Critical for ML/DL models to classify rhythms or detect abnormalities.
